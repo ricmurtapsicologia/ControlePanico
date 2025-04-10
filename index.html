@@ -1,915 +1,793 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <!-- Meta Tags Básicas -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO e Open Graph -->
-    <meta
-      name="description"
-      content="Transforme a ansiedade em alta performance. Saiba como identificar suas origens, reconhecer sinais e receber orientações terapêuticas que equilibram sucesso e bem-estar."
-    />
-    <meta property="og:title" content="Ansiedade na Alta Performance" />
-    <meta
-      property="og:description"
-      content="Eu, como seu psicólogo, ajudo você a transformar a ansiedade em vantagem competitiva. Descubra estratégias para viver com equilíbrio e sucesso."
-    />
-    <meta
-      property="og:image"
-      content="https://i.pinimg.com/736x/a7/3f/2c/a73f2cc4ff4e661859f9b7aa6d15f648.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://seudominio.github.io/landing-ansiedade/"
-    />
-    <meta property="og:type" content="website" />
-    <title>Ansiedade na Alta Performance | Transforme Desafios em Sucesso</title>
+<head>
+	<!-- Meta Tags Básicas -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- SEO e Open Graph -->
+	<meta name="description" content="Transforme a ansiedade em alta performance. Saiba como identificar suas origens, reconhecer sinais e receber orientações terapêuticas que equilibram sucesso e bem-estar." />
+	<meta property="og:title" content="Ansiedade na Alta Performance" />
+	<meta property="og:description" content="Eu, como psicólogo, ajudo você a transformar a ansiedade em vantagem competitiva. Descubra estratégias para viver com equilíbrio e sucesso." />
+	<meta property="og:image" content="https://i.pinimg.com/736x/a7/3f/2c/a73f2cc4ff4e661859f9b7aa6d15f648.jpg" />
+	<meta property="og:url" content="https://ricmurtapsicologia.github.io/altaperformance/" />
+	<meta property="og:type" content="website" />
+	<title>Ansiedade na Alta Performance | Transforme Desafios em Sucesso</title>
+	<!-- CSS: Estilos modernos, mobile-first e responsivos -->
+	<style>
+		/* Evita scroll horizontal */
+		html, body {
+		  overflow-x: hidden;
+		}
+		
+		/* Variáveis de cores, inspiradas no banner (tons de azul e um amarelo de acento) */
+		:root {
+		  --cor-primaria: #0056b3;  /* Azul principal: confiança e serenidade */
+		  --cor-secundaria: #007acc;/* Azul complementar para botões e destaques */
+		  --cor-fundo: #f9f9f9;
+		  --cor-texto: #333;
+		  --cor-acento: #FFC107;    /* Amarelo para destaque */
+		  --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		  --transicao-base: 0.3s;
+		}
+		
+		/* Reset global */
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}
+		body {
+		  font-family: var(--font-principal);
+		  background-color: var(--cor-fundo);
+		  color: var(--cor-texto);
+		  line-height: 1.6;
+		  scroll-behavior: smooth;
+		  min-height: 100vh;
+		  position: relative;
+		}
+		a {
+		  color: var(--cor-secundaria);
+		  text-decoration: none;
+		}
+		a:hover {
+		  text-decoration: underline;
+		}
+		
+		/* Splash Screen (Onboarding) */
+		.onboarding-modal {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-color: var(--cor-primaria);
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  z-index: 2000;
+		  padding: 10px;
+		}
+		.onboarding-content {
+		  background: #fff;
+		  border-radius: 8px;
+		  padding: 30px;
+		  max-width: 500px;
+		  width: 90%;
+		  text-align: center;
+		}
+		.onboarding-content h2 {
+		  font-size: 2rem;
+		  margin-bottom: 15px;
+		  color: var(--cor-primaria);
+		}
+		.onboarding-content p {
+		  margin-bottom: 20px;
+		  font-size: 1.1rem;
+		  color: var(--cor-texto);
+		}
+		.btn-onboard {
+		  padding: 10px 25px;
+		  background-color: var(--cor-secundaria);
+		  color: #fff;
+		  border: none;
+		  border-radius: 50px;
+		  font-size: 1rem;
+		  cursor: pointer;
+		  transition: background-color var(--transicao-base);
+		}
+		.btn-onboard:hover {
+		  background-color: #006fda;
+		}
+		
+		/* Sidebar: Menu Lateral */
+		.sidebar {
+		  position: fixed;
+		  top: 0;
+		  left: -250px;
+		  width: 250px;
+		  height: 100%;
+		  background-color: #fff;
+		  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+		  padding: 20px;
+		  transition: transform var(--transicao-base);
+		  z-index: 1500;
+		}
+		.sidebar.active {
+		  transform: translateX(250px);
+		}
+		.sidebar nav ul {
+		  list-style: none;
+		  padding: 0;
+		  margin-top: 30px;
+		}
+		.sidebar nav ul li {
+		  margin: 15px 0;
+		}
+		.sidebar nav ul li a {
+		  font-size: 1.1rem;
+		  font-weight: bold;
+		}
+		.sidebar .close-btn {
+		  background: transparent;
+		  border: none;
+		  font-size: 1.5rem;
+		  cursor: pointer;
+		  position: absolute;
+		  top: 15px;
+		  right: 15px;
+		}
+		
+		/* Botão Hamburger com texto "Menu" */
+		.hamburger {
+		  position: fixed;
+		  top: 20px;
+		  left: 20px;
+		  display: flex;
+		  align-items: center;
+		  gap: 5px;
+		  background: transparent;
+		  border: none;
+		  cursor: pointer;
+		  z-index: 1600;
+		}
+		.hamburger svg {
+		  width: 30px;
+		  height: 30px;
+		  fill: var(--cor-acento);
+		}
+		.hamburger span {
+		  font-size: 1rem;
+		  color: var(--cor-acento);
+		  font-weight: bold;
+		}
+		
+		/* Cabeçalho e Banner */
+		header.banner {
+		  position: relative;
+		  width: 100%;
+		  height: 90vh;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  background:
+		    linear-gradient(
+		      to bottom,
+		      rgba(0, 0, 0, 0.4),
+		      rgba(0, 0, 0, 0.7)
+		    ),
+		    url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg')
+		      no-repeat center 20%;
+		  background-size: cover;
+		  text-align: center;
+		}
+		header.banner h1 {
+		  font-size: 3.5rem;
+		  font-weight: bold;
+		  color: #fff;
+		  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+		  margin-bottom: 15px;
+		}
+		header.banner p {
+		  font-size: 1.5rem;
+		  font-weight: 300;
+		  color: #fff;
+		  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+		}
+		
+		/* Navegação Superior (links âncora) */
+		nav.top-nav {
+		  background-color: #fff;
+		  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		  padding: 10px 0;
+		}
+		nav.top-nav ul {
+		  display: flex;
+		  justify-content: center;
+		  list-style: none;
+		  flex-wrap: wrap;
+		}
+		nav.top-nav ul li {
+		  margin: 0 15px;
+		}
+		nav.top-nav ul li a {
+		  padding: 5px 0;
+		  font-weight: bold;
+		}
+		
+		/* Main: Conteúdo Principal */
+		main {
+		  max-width: 1200px;
+		  margin: 40px auto;
+		  padding: 20px;
+		  display: grid;
+		  grid-template-columns: 1fr;
+		  gap: 40px;
+		}
+		section {
+		  background-color: #fff;
+		  border-radius: 8px;
+		  overflow: hidden;
+		  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		  transition: transform var(--transicao-base);
+		}
+		section:hover {
+		  transform: scale(1.01);
+		}
+		section h2 {
+		  background-color: var(--cor-primaria);
+		  color: #fff;
+		  padding: 15px;
+		  text-align: center;
+		  text-transform: uppercase;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  gap: 10px;
+		}
+		section h2 svg {
+		  width: 24px;
+		  height: 24px;
+		  fill: #fff;
+		}
+		section .content {
+		  padding: 20px;
+		}
+		/* Espaçamento extra para parágrafos */
+		section .content p {
+		  margin-bottom: 1em;
+		}
+		
+		/* Seção: Introdução -> Imagem à esquerda e texto à direita */
+		#introducao .content {
+		  display: flex;
+		  flex-wrap: wrap;
+		  align-items: center;
+		  gap: 20px;
+		}
+		#introducao .content img.placeholder-image {
+		  flex: 0 0 40%;
+		  max-width: 300px;
+		  object-fit: cover;
+		  border-radius: 4px;
+		}
+		#introducao .content > p {
+		  flex: 1 1 55%;
+		  font-size: 1rem;
+		  text-align: justify;
+		}
+		
+		/* Seção: Origens */
+		#origens .content {
+		  text-align: justify;
+		  padding: 0 10px;
+		}
+		
+		/* Seção: Sinais -> Texto à esquerda, imagem à direita */
+		#sinais .content {
+		  display: flex;
+		  flex-wrap: wrap;
+		  align-items: center;
+		  gap: 20px;
+		}
+		#sinais .content .text-block {
+		  flex: 1 1 55%;
+		  text-align: justify;
+		}
+		#sinais .content .text-block p {
+		  margin-bottom: 1em;
+		}
+		#sinais .content ul {
+		  margin-left: 20px;
+		  list-style-type: disc;
+		  line-height: 1.8;
+		}
+		#sinais .content ul li {
+		  margin-bottom: 8px;
+		}
+		#sinais .content img.placeholder-image {
+		  flex: 0 0 40%;
+		  max-width: 300px;
+		  object-fit: cover;
+		  border-radius: 4px;
+		}
+		
+		/* Seção de Dicas: texto mais detalhado para o usuário */
+		#dicas .content p {
+		  margin-bottom: 1.2em;
+		}
+		#dicas .content ul {
+		  margin-left: 20px;
+		  list-style-type: disc;
+		  line-height: 1.8;
+		}
+		#dicas .content ul li {
+		  margin-bottom: 10px;
+		}
+		#dicas .content ul li strong {
+		  display: block;
+		  margin-bottom: 5px;
+		}
+		
+		/* Seção: Sobre Mim, foto no lado ESQUERDO em desktop e texto do lado DIREITO */
+		#sobremim .content {
+		  display: flex;
+		  flex-wrap: nowrap;
+		  align-items: center;
+		  text-align: justify;
+		  gap: 20px;
+		}
+		#sobremim .content .foto {
+		  flex: 0 0 150px;
+		  display: flex;
+		  justify-content: center;
+		}
+		#sobremim .content .foto img {
+		  width: 150px;
+		  height: 150px;
+		  object-fit: cover;
+		  border-radius: 50%;
+		}
+		#sobremim .content .texto {
+		  flex: 1 1 auto;
+		}
+		
+		/* Seção: Interação */
+		#contato .content {
+		  text-align: justify;
+		}
+		#contato form#formContato {
+		  display: flex;
+		  flex-direction: column;
+		  gap: 10px;
+		}
+		#contato form#formContato button {
+		  align-self: center;
+		}
+		
+		/* Botões de CTA Elegantes */
+		.btn {
+		  display: inline-block;
+		  padding: 10px 20px;
+		  background-color: var(--cor-secundaria);
+		  color: #fff;
+		  font-weight: bold;
+		  border: none;
+		  border-radius: 50px;
+		  cursor: pointer;
+		  transition: background-color var(--transicao-base), transform var(--transicao-base);
+		  text-align: center;
+		  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		.btn:hover {
+		  background-color: #006fda;
+		  transform: translateY(-2px);
+		}
+		.btn:active {
+		  transform: translateY(0);
+		}
+		.btn-rastreio {
+		  background-color: var(--cor-primaria);
+		}
+		
+		/* Sidebar de Compartilhamento e Botão "Voltar ao Topo" (apenas ícone) */
+		.share-container,
+		#back-to-top {
+		  position: fixed;
+		  z-index: 1000;
+		  width: 50px;
+		  height: 50px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  border-radius: 50%;
+		}
+		.share-container {
+		  bottom: 20px;
+		  left: 20px;
+		}
+		#back-to-top {
+		  bottom: 20px;
+		  right: 20px;
+		  background-color: var(--cor-primaria);
+		  color: #fff;
+		  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+		  display: none;
+		  transition: background-color var(--transicao-base);
+		}
+		#back-to-top:hover {
+		  background-color: #004494;
+		}
+		.share-container a {
+		  width: 50px;
+		  height: 50px;
+		  background-color: var(--cor-secundaria);
+		  color: #fff;
+		  border-radius: 50%;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  transition: background-color var(--transicao-base);
+		}
+		.share-container a:hover {
+		  background-color: #006fda;
+		}
+		.share-container a svg,
+		#back-to-top svg {
+		  width: 24px;
+		  height: 24px;
+		  fill: #fff;
+		}
+		
+		/* Rodapé: Centralizado e Simétrico */
+		footer {
+		  background-color: #fff;
+		  padding: 20px;
+		  text-align: center;
+		  border-top: 1px solid #eaeaea;
+		}
+		footer p {
+		  margin: 5px 0;
+		  font-size: 0.95rem;
+		}
+		
+		/* Responsividade: Mobile-First */
+		@media (max-width: 768px) {
+		  .hamburger span {
+		    font-size: 0.9rem;
+		  }
+		  nav.top-nav ul li {
+		    margin: 0 8px;
+		  }
+		  nav.top-nav ul li a {
+		    font-size: 0.9rem;
+		    padding: 5px;
+		  }
+		  #rastreio .content,
+		  #dicas .content,
+		  #contato .content {
+		    text-align: justify;
+		  }
+		  /* Ajuste "Sobre Mim" para mobile */
+		  #sobremim .content {
+		    flex-wrap: wrap;
+		  }
+		  #sobremim .content .foto,
+		  #sobremim .content .texto {
+		    flex: 1 1 100%;
+		    text-align: center;
+		  }
+		}
+		@media (max-width: 480px) {
+		  header.banner {
+		    height: 40vh;
+		  }
+		  header.banner h1 {
+		    font-size: 2rem;
+		  }
+		  header.banner p {
+		    font-size: 1rem;
+		  }
+		  /* Ajusta o layout em telas muito pequenas */
+		  .onboarding-content {
+		    padding: 20px;
+		    margin: 0 10px;
+		  }
+		  /* Ajuste dos botões fixos para telas menores */
+		  .share-container,
+		  #back-to-top {
+		    bottom: 80px;
+		    width: 45px;
+		    height: 45px;
+		  }
+		}
+	</style>
+</head>
 
-    <!-- CSS: Estilos modernos, mobile-first e responsivos -->
-    <style>
-      /* Impede o scroll horizontal na página */
-      html,
-      body {
-        overflow-x: hidden;
-      }
+<body>
+	<!-- Splash Screen (Onboarding) -->
+	<div class="onboarding-modal" id="onboardingModal" role="dialog" aria-modal="true" aria-labelledby="onboardTitle">
+		<div class="onboarding-content">
+			<h2 id="onboardTitle">Bem-vindo!</h2>
+			<p> Fico muito feliz em receber você aqui. Vamos começar uma jornada para que sua alta performance seja acompanhada de bem-estar e tranquilidade. Clique abaixo para prosseguir. </p>
+			<button class="btn-onboard" id="btnOnboard" aria-label="Começar"> Começar </button>
+		</div>
+	</div>
+	<!-- Botão Hamburger com texto "Menu" -->
+	<button class="hamburger" id="hamburgerBtn" aria-label="Menu" title="Menu">
+		<svg viewBox="0 0 100 80">
+			<rect width="100" height="15"></rect>
+			<rect y="30" width="100" height="15"></rect>
+			<rect y="60" width="100" height="15"></rect>
+		</svg>
+		<span>Menu</span>
+	</button>
+	<!-- Sidebar de Navegação -->
+	<aside class="sidebar" id="sidebar" aria-label="Menu lateral">
+		<button class="close-btn" id="sidebarCloseBtn" aria-label="Fechar menu">
+			<svg viewBox="0 0 20 20">
+				<line x1="1" y1="1" x2="19" y2="19" stroke="#0056b3" stroke-width="2" />
+				<line x1="19" y1="1" x2="1" y2="19" stroke="#0056b3" stroke-width="2" />
+			</svg>
+		</button>
+		<nav>
+			<ul>
+				<li><a href="#introducao" class="nav-link">Início</a></li>
+				<li><a href="#origens" class="nav-link">Origens</a></li>
+				<li><a href="#sinais" class="nav-link">Sinais</a></li>
+				<li><a href="#rastreio" class="nav-link">Rastreie</a></li>
+				<li><a href="#dicas" class="nav-link">Dicas</a></li>
+				<li><a href="#sobremim" class="nav-link">Sobre Mim</a></li>
+				<li><a href="#contato" class="nav-link">Interação</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<!-- Cabeçalho e Banner -->
+	<header class="banner" role="banner" aria-label="Imagem inspiradora do banner">
+		<div>
+			<h1>Ansiedade em Alta Performance</h1>
+			<p>Transforme desafios em oportunidades e alcance seu máximo potencial com equilíbrio.</p>
+		</div>
+	</header>
+	<!-- Navegação Superior (links âncora) -->
+	<nav class="top-nav" role="navigation" aria-label="Menu superior">
+		<ul>
+			<li><a href="#introducao">Início</a></li>
+			<li><a href="#origens">Origens</a></li>
+			<li><a href="#sinais">Sinais</a></li>
+			<li><a href="#rastreio">Rastreie</a></li>
+			<li><a href="#dicas">Dicas</a></li>
+			<li><a href="#sobremim">Sobre Mim</a></li>
+			<li><a href="#contato">Interação</a></li>
+		</ul>
+	</nav>
+	<!-- Main: Conteúdo Principal -->
+	<main>
+		<!-- Seção 1: Introdução -->
+		<section id="introducao" tabindex="0" aria-labelledby="introTitulo">
+			<h2 id="introTitulo">
+				<!-- SVG Ícone de Ideia -->
+				<svg viewBox="0 0 24 24">
+					<path d="M9 21h6v-1H9v1zM12 2C7.03 2 3 6.03 3 11c0 3.87 2.69 7.14 6.44 8.32L10 22h4l.56-2.68C18.31 18.14 21 14.87 21 11c0-4.97-4.03-9-9-9z" />
+				</svg> Introdução
+			</h2>
+			<div class="content">
+				<img src="https://i.pinimg.com/736x/9c/b1/70/9cb17068b6852d8419613bf74b400037.jpg" alt="Ambiente corporativo e acadêmico" class="placeholder-image" />
+				<p> No ambiente corporativo e acadêmico, a busca incessante por resultados muitas vezes gera uma pressão imensa. Se você tem sentido essa exigência constante para se destacar, saiba que é possível aprender a lidar com essa ansiedade de forma autônoma. Aqui, vou compartilhar estratégias práticas para transformar esse desafio em energia positiva e alcançar o equilíbrio necessário para o sucesso. </p>
+			</div>
+		</section>
+		<!-- Seção 2: Origens da Ansiedade -->
+		<section id="origens" tabindex="0" aria-labelledby="origensTitulo">
+			<h2 id="origensTitulo">
+				<!-- SVG Ícone de Raiz -->
+				<svg viewBox="0 0 24 24">
+					<path d="M12 2C8.13 2 5 5.13 5 9c0 2.42 1.23 4.54 3.09 5.79L8 22l4-3 4 3-0.09-7.21C17.77 13.54 19 11.42 19 9c0-3.87-3.13-7-7-7z" />
+				</svg> Origens
+			</h2>
+			<div class="content">
+				<p> A pressão por resultados, o perfeccionismo e a competitividade desenfreada podem levar ao surgimento da ansiedade. Quando as exigências se acumulam, você pode sentir que seu bem-estar emocional fica em segundo plano. </p>
+				<p> É fundamental identificar o que alimenta essa ansiedade para ajustar sua forma de pensar e agir, encontrando um caminho mais equilibrado. </p>
+			</div>
+		</section>
+		<!-- Seção 3: Sinais -->
+		<section id="sinais" tabindex="0" aria-labelledby="sinaisTitulo">
+			<h2 id="sinaisTitulo">
+				<!-- SVG Ícone de Alerta -->
+				<svg viewBox="0 0 24 24">
+					<path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+				</svg> Sinais
+			</h2>
+			<div class="content">
+				<div class="text-block">
+					<p> Fique atento a alguns sinais que podem indicar que a pressão está ultrapassando seus limites: </p>
+					<ul>
+						<li>Sentir uma cobrança interna intensa para atingir metas.</li>
+						<li>Dificuldade para se desconectar do trabalho ou estudos.</li>
+						<li>Problemas para dormir, como insônia frequente.</li>
+						<li>Tensão muscular e dores sem explicação.</li>
+						<li>Irritabilidade em situações cotidianas.</li>
+						<li>Autocrítica constante que fere sua autoconfiança.</li>
+						<li>Falta de foco em tarefas importantes.</li>
+						<li>Sensação de estar sobrecarregado e sem energia.</li>
+					</ul>
+				</div>
+				<img src="https://i.pinimg.com/736x/45/62/af/4562afbfe706b5aad77a35e173c8ce6c.jpg" alt="Sinais de ansiedade" class="placeholder-image" />
+			</div>
+		</section>
+		<!-- Seção 4: Rastreie sua Ansiedade -->
+		<section id="rastreio" tabindex="0" aria-labelledby="rastreioTitulo">
+			<h2 id="rastreioTitulo">
+				<!-- SVG Ícone de Monitoramento -->
+				<svg viewBox="0 0 24 24">
+					<path d="M3 4v16h18V4H3zm16 14H5V6H3v12h16z" />
+				</svg> Rastreie
+			</h2>
+			<div class="content">
+				<p> Preencha a escala de ansiedade para avaliar seu nível de preocupação. Ao entender melhor seu momento atual, você poderá receber dicas personalizadas para gerenciar a ansiedade em ambientes competitivos. </p>
+				<div style="text-align: center; margin: 20px 0;">
+					<a class="btn btn-rastreio" href="https://forms.gle/Ts8LUo42RheEPi4a7" target="_blank" aria-label="Preencher escala de ansiedade"> Preencher Escala de Ansiedade </a>
+				</div>
+			</div>
+		</section>
+		<!-- Seção 5: Dicas (mais detalhadas) -->
+		<section id="dicas" tabindex="0" aria-labelledby="dicasTitulo">
+			<h2 id="dicasTitulo">
+				<!-- SVG Ícone de Ideias -->
+				<svg viewBox="0 0 24 24">
+					<path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 2.69 7.14 6.44 8.32L10 22h4l.56-4.68C16.31 16.14 19 12.87 19 9c0-3.87-3.13-7-7-7z" />
+				</svg> Dicas
+			</h2>
+			<div class="content">
+				<p> Confira algumas estratégias específicas que você pode aplicar no dia a dia, tanto no ambiente corporativo quanto no acadêmico, para lidar com a ansiedade de forma prática e segura: </p>
+				<ul>
+					<li>
+						<strong>Exercício Respiratório no Local de Trabalho:</strong> Quando sentir a tensão aumentar, feche os olhos por alguns segundos (se possível), inspire pelo nariz em quatro contagens, segure o ar por quatro, e expire pela boca em quatro. Repita por pelo menos um minuto para aliviar a agitação.
+					</li>
+					<li>
+						<strong>Desafio aos Pensamentos Limitantes:</strong> Tenha um pequeno caderno ou anotações no celular. Sempre que surgir um pensamento negativo (“Não vou dar conta”, “Estou atrasado demais”), escreva-o e questione se ele é realmente verdadeiro. Reescreva de forma positiva e realista.
+					</li>
+					<li>
+						<strong>Autocuidado Diário em Pequenos Intervalos:</strong> Faça micro-pausas de 5 minutos para alongar o corpo, beber água ou ouvir uma música relaxante. Pequenas interrupções podem reduzir a sobrecarga mental e melhorar sua concentração.
+					</li>
+					<li>
+						<strong>Aceite seus Sentimentos e Pratique Feedback Positivo:</strong> Em reuniões, avalie suas emoções sem se julgar. Caso esteja nervoso, reconheça isso internamente e reafirme seus valores: “Estou aqui para aprender e contribuir. É normal sentir ansiedade, mas posso transformá-la em foco.”
+					</li>
+					<li>
+						<strong>Atenção Plena durante Atividades Rotineiras:</strong> Ao responder e-mails ou estudar, concentre-se completamente na tarefa por períodos de 20-30 minutos (técnica Pomodoro), deixando outras preocupações de lado durante esse intervalo.
+					</li>
+					<li>
+						<strong>Registro de Conquistas Diárias:</strong> No final do expediente ou do dia de estudos, anote pelo menos três coisas que deram certo. Esse hábito fortalece a autoconfiança e diminui a percepção de fracasso quando algo não sai como planejado.
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- Seção 6: Sobre Mim (foto à esquerda em desktop) -->
+		<section id="sobremim" tabindex="0" aria-labelledby="sobremimTitulo">
+			<h2 id="sobremimTitulo">
+				<!-- SVG Ícone de Perfil -->
+				<svg viewBox="0 0 24 24">
+					<path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z" />
+				</svg> Sobre Mim
+			</h2>
+			<div class="content">
+				<div class="foto">
+					<img src="https://i.pinimg.com/736x/da/b5/63/dab56383e5343799dcd4df87a4675918.jpg" alt="Minha Foto" />
+				</div>
+				<div class="texto">
+					<p>
+						<strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico dedicado a ajudar você a superar desafios emocionais e alcançar equilíbrio, mesmo em cenários de alta demanda.
+					</p>
+					<p> Trabalho com abordagens práticas e eficazes para promover mudanças reais e sustentáveis, proporcionando um ambiente seguro e acolhedor para o seu crescimento pessoal. </p>
+				</div>
+			</div>
+		</section>
+		<!-- Seção 7: Contato & Interação -->
+		<section id="contato" tabindex="0" aria-labelledby="contatoTitulo">
+			<h2 id="contatoTitulo">
+				<!-- SVG Ícone de Chat -->
+				<svg viewBox="0 0 24 24">
+					<path d="M21 6h-2v9H5v2c0 1.11.89 2 2 2h11l4 4V8c0-1.11-.89-2-2-2zM17 12V4H3v12h2V6h12z" />
+				</svg> Interação
+			</h2>
+			<div class="content">
+				<p> Este é um espaço para você compartilhar suas experiências, dúvidas ou pensamentos. Escreva sua mensagem e vamos construir juntos um caminho para superar desafios e encontrar o equilíbrio que você merece. </p>
+				<form id="formContato" aria-label="Enviar mensagem para interação">
+					<label for="mensagemContato">Sua Mensagem:</label>
+					<textarea id="mensagemContato" name="mensagemContato" rows="4" placeholder="Digite sua mensagem ou comentário aqui..." required></textarea>
+					<button type="submit" class="btn" aria-label="Enviar mensagem"> Enviar Mensagem </button>
+				</form>
+			</div>
+		</section>
+	</main>
+	<!-- Botão de Compartilhamento via WhatsApp -->
+	<aside class="share-container" aria-label="Compartilhar esta página">
+		<a id="shareButton" href="#" target="_blank">
+			<svg viewBox="0 0 24 24">
+				<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 
+            0-.24-.04-.47-.09-.7l7.02-4.11c.54.5 1.24.81 2.01.81 
+            1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 
+            .24.04.47.09.7L8.91 9.81C8.37 9.31 7.67 9 6.9 
+            9 5.24 9 3.9 10.34 3.9 12s1.34 3 3 3c.77 0 
+            1.47-.31 2.01-.81l7.12 4.18c-.05.21-.08.43-.08.65 
+            0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z" />
+			</svg>
+		</a>
+	</aside>
+	<!-- Botão "Voltar ao Topo" (apenas ícone) -->
+	<button id="back-to-top" aria-label="Voltar ao topo">
+		<svg viewBox="0 0 24 24">
+			<path d="M12 4l-8 8h6v8h4v-8h6z" />
+		</svg>
+	</button>
+	<!-- Rodapé: Centralizado e Simétrico -->
+	<footer role="contentinfo" aria-label="Rodapé da página">
+		<p>© 2025 Richelmy Murta Psicólogo</p>
+		<p>Especialista em Terapia Cognitivo-Comportamental</p>
+	</footer>
+	<!-- JavaScript ES6+: Funcionalidades Interativas e Splash Screen -->
+	<script>
+		// Splash Screen: Fechar ao clicar em "Começar"
+		const onboardingModal = document.getElementById("onboardingModal");
+		document.getElementById("btnOnboard").addEventListener("click", () => {
+		  onboardingModal.style.display = "none";
+		});
+		
+		// Sidebar: Toggle de abertura/fechamento
+		const sidebar = document.getElementById("sidebar");
+		const hamburgerBtn = document.getElementById("hamburgerBtn");
+		const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+		
+		hamburgerBtn.addEventListener("click", () => {
+		  sidebar.classList.toggle("active");
+		});
+		sidebarCloseBtn.addEventListener("click", () => {
+		  sidebar.classList.remove("active");
+		});
+		
+		// Fechar o menu mobile ao clicar em qualquer link (melhor UX)
+		const navLinks = document.querySelectorAll(".nav-link");
+		navLinks.forEach(link => {
+		  link.addEventListener("click", () => {
+		    sidebar.classList.remove("active");
+		  });
+		});
+		
+		// Botão "Voltar ao Topo"
+		const backToTopButton = document.getElementById("back-to-top");
+		window.addEventListener("scroll", () => {
+		  backToTopButton.style.display = window.scrollY > 300 ? "flex" : "none";
+		});
+		backToTopButton.addEventListener("click", () => {
+		  window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+		
+		// Compartilhamento via WhatsApp
+		const shareButton = document.getElementById("shareButton");
+		shareButton.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const pageUrl = encodeURIComponent(window.location.href);
+		  const shareText = encodeURIComponent(
+		    "Confira esta estratégia exclusiva para transformar sua ansiedade em alta performance!"
+		  );
+		  const whatsappUrl = `https://api.whatsapp.com/send?text=${shareText}%20${pageUrl}`;
+		  window.open(whatsappUrl, "_blank");
+		});
+		
+		// Formulário de Contato: Envio de mensagem via WhatsApp
+		const formContato = document.getElementById("formContato");
+		formContato.addEventListener("submit", (e) => {
+		  e.preventDefault();
+		  const mensagem = document.getElementById("mensagemContato").value.trim();
+		  if (mensagem !== "") {
+		    const telefone = "5535984640729"; // +55 35 98464-0729
+		    const mensagemEncode = encodeURIComponent(mensagem);
+		    const whatsappLink = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagemEncode}`;
+		    window.open(whatsappLink, "_blank");
+		    formContato.reset();
+		  }
+		});
+	</script>
+</body>
 
-      /* Variáveis de cores, inspiradas no banner (tons de azul e amarelo para contraste) */
-      :root {
-        --cor-primaria: #0056b3; /* Azul principal: confiança e serenidade */
-        --cor-secundaria: #007acc; /* Azul complementar para botões e destaques */
-        --cor-fundo: #f9f9f9;
-        --cor-texto: #333;
-        --cor-acento: #FFC107; /* Amarelo para destacar elementos no mobile */
-        --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        --transicao-base: 0.3s;
-      }
-
-      /* Reset global */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: var(--font-principal);
-        background-color: var(--cor-fundo);
-        color: var(--cor-texto);
-        line-height: 1.6;
-        scroll-behavior: smooth;
-        min-height: 100vh;
-        position: relative;
-      }
-      a {
-        color: var(--cor-secundaria);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-
-      /* Splash Screen (Onboarding) */
-      .onboarding-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--cor-primaria);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        padding: 10px;
-      }
-      .onboarding-content {
-        background: #fff;
-        border-radius: 8px;
-        padding: 30px;
-        max-width: 500px;
-        width: 90%;
-        text-align: center;
-        /* Usará a animação de sway para o fechamento */
-        animation: none;
-      }
-      .onboarding-content h2 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        color: var(--cor-primaria);
-      }
-      .onboarding-content p {
-        margin-bottom: 20px;
-        font-size: 1.1rem;
-        color: var(--cor-texto);
-      }
-      .btn-onboard {
-        padding: 10px 25px;
-        background-color: var(--cor-secundaria);
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color var(--transicao-base);
-      }
-      .btn-onboard:hover {
-        background-color: #006fda;
-      }
-      /* Animação para transição da splash (sway) */
-      @keyframes sway {
-        from {
-          opacity: 1;
-          transform: translateX(0);
-        }
-        to {
-          opacity: 0;
-          transform: translateX(100%);
-        }
-      }
-      .sway {
-        animation: sway 0.5s ease-out forwards;
-      }
-
-      /* Sidebar: Menu Lateral */
-      .sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: #fff;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform var(--transicao-base);
-        z-index: 1500;
-      }
-      .sidebar.active {
-        transform: translateX(250px);
-      }
-      .sidebar nav ul {
-        list-style: none;
-        padding: 0;
-        margin-top: 30px;
-      }
-      .sidebar nav ul li {
-        margin: 15px 0;
-      }
-      .sidebar nav ul li a {
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
-      .sidebar .close-btn {
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-      }
-
-      /* Botão Hamburger com texto "Menu" */
-      .hamburger {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1600;
-      }
-      .hamburger svg {
-        width: 30px;
-        height: 30px;
-        fill: var(--cor-acento); /* Alterado para amarelo */
-      }
-      .hamburger span {
-        font-size: 1rem;
-        color: var(--cor-acento);
-        font-weight: bold;
-      }
-
-      /* Cabeçalho e Banner */
-      header.banner {
-        position: relative;
-        width: 100%;
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: 
-          linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.7)
-          ),
-          url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg')
-            no-repeat center 20%;
-        background-size: cover;
-        text-align: center;
-      }
-      header.banner h1 {
-        font-size: 3.5rem;
-        font-weight: bold;
-        color: #fff;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-        margin-bottom: 15px;
-      }
-      header.banner p {
-        font-size: 1.5rem;
-        font-weight: 300;
-        color: #fff;
-        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-      }
-
-      /* Navegação Superior (links âncora) */
-      nav.top-nav {
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-      }
-      nav.top-nav ul {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        flex-wrap: wrap;
-      }
-      nav.top-nav ul li {
-        margin: 0 15px;
-      }
-      nav.top-nav ul li a {
-        padding: 5px 0;
-        font-weight: bold;
-      }
-
-      /* Main: Conteúdo Principal */
-      main {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      section {
-        background-color: #fff;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform var(--transicao-base);
-      }
-      section:hover {
-        transform: scale(1.01);
-      }
-      section h2 {
-        background-color: var(--cor-primaria);
-        color: #fff;
-        padding: 15px;
-        text-align: center;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
-      section h2 svg {
-        width: 24px;
-        height: 24px;
-        fill: #fff;
-      }
-      section .content {
-        padding: 20px;
-      }
-      /* Espaçamento extra para parágrafos */
-      section .content p {
-        margin-bottom: 1em;
-      }
-
-      /* Seção: Introdução -> Imagem à esquerda e texto à direita */
-      #introducao .content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 20px;
-      }
-      #introducao .content img.placeholder-image {
-        flex: 0 0 40%;
-        max-width: 300px;
-        object-fit: cover;
-        border-radius: 4px;
-      }
-      #introducao .content > p {
-        flex: 1 1 55%;
-        font-size: 1rem;
-        text-align: justify;
-      }
-
-      /* Seção: Origens */
-      #origens .content {
-        text-align: justify;
-        padding: 0 10px;
-      }
-
-      /* Seção: Sinais -> Texto à esquerda, imagem à direita */
-      #sinais .content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 20px;
-      }
-      #sinais .content .text-block {
-        flex: 1 1 55%;
-        text-align: justify;
-      }
-      #sinais .content .text-block p {
-        margin-bottom: 1em;
-      }
-      #sinais .content ul {
-        margin-left: 20px;
-        list-style-type: disc;
-        line-height: 1.8;
-      }
-      #sinais .content ul li {
-        margin-bottom: 8px;
-      }
-      #sinais .content img.placeholder-image {
-        flex: 0 0 40%;
-        max-width: 300px;
-        object-fit: cover;
-        border-radius: 4px;
-      }
-
-      /* Seção de Dicas */
-      #dicas .content p {
-        margin-bottom: 1.2em;
-      }
-      #dicas .content ul {
-        margin-left: 20px;
-        list-style-type: disc;
-        line-height: 1.8;
-      }
-      #dicas .content ul li {
-        margin-bottom: 8px;
-      }
-
-      /* Seção: Sobre Mim */
-      #sobremim .content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        align-items: center;
-        text-align: justify;
-      }
-      #sobremim .content > div {
-        flex: 1 1 300px;
-      }
-      #sobremim .content img {
-        flex: 0 0 150px;
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-
-      /* Seção: Interação */
-      #contato .content {
-        text-align: justify;
-      }
-      #contato form#formContato {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      #contato form#formContato button {
-        align-self: center;
-      }
-
-      /* Botões de CTA Elegantes */
-      .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: var(--cor-secundaria);
-        color: #fff;
-        font-weight: bold;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: background-color var(--transicao-base), transform var(--transicao-base);
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .btn:hover {
-        background-color: #006fda;
-        transform: translateY(-2px);
-      }
-      .btn:active {
-        transform: translateY(0);
-      }
-      .btn-rastreio {
-        background-color: var(--cor-primaria);
-      }
-
-      /* Sidebar de Compartilhamento e Botão "Voltar ao Topo" */
-      .share-container,
-      #back-to-top {
-        position: fixed;
-        z-index: 1000;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-      }
-      .share-container {
-        bottom: 20px;
-        left: 20px;
-      }
-      #back-to-top {
-        bottom: 20px;
-        right: 20px;
-        background-color: var(--cor-primaria);
-        color: #fff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        display: none;
-        transition: background-color var(--transicao-base);
-      }
-      #back-to-top:hover {
-        background-color: #004494;
-      }
-      /* Ajuste para que os botões não contenham texto, apenas ícones */
-      .share-container a {
-        width: 50px;
-        height: 50px;
-        background-color: var(--cor-secundaria);
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color var(--transicao-base);
-      }
-      .share-container a:hover {
-        background-color: #006fda;
-      }
-      .share-container a svg,
-      #back-to-top svg {
-        width: 24px;
-        height: 24px;
-        fill: #fff;
-      }
-
-      /* Responsividade: Mobile-First */
-      @media (max-width: 768px) {
-        .hamburger span {
-          font-size: 0.9rem;
-        }
-        nav.top-nav ul li {
-          margin: 0 8px;
-        }
-        nav.top-nav ul li a {
-          font-size: 0.9rem;
-          padding: 5px;
-        }
-        /* Garante que os textos das seções fiquem justificados */
-        #rastreio .content,
-        #dicas .content,
-        #sobremim .content,
-        #contato .content {
-          text-align: justify;
-        }
-      }
-
-      @media (max-width: 480px) {
-        header.banner {
-          height: 40vh;
-        }
-        header.banner h1 {
-          font-size: 2rem;
-        }
-        header.banner p {
-          font-size: 1rem;
-        }
-        /* Ajuste para a splash: conteúdo centralizado e com margens internas */
-        .onboarding-content {
-          padding: 20px;
-          margin: 0 10px;
-        }
-        /* Centraliza a imagem de "Sobre Mim" e garante que o texto fique adequado */
-        #sobremim .content {
-          text-align: justify;
-          flex-direction: column;
-          align-items: center;
-        }
-        #sobremim .content > div {
-          text-align: justify;
-        }
-        #sobremim .content img {
-          margin: 0 auto;
-        }
-        /* Centraliza o botão de envio do formulário na seção de interação */
-        #contato form#formContato button {
-          align-self: center;
-        }
-        /* Ajusta os botões fixos para telas menores */
-        .share-container,
-        #back-to-top {
-          bottom: 80px;
-          width: 45px;
-          height: 45px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Splash Screen (Onboarding) -->
-    <div
-      class="onboarding-modal"
-      id="onboardingModal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="onboardTitle"
-    >
-      <div class="onboarding-content" id="onboardingContent">
-        <h2 id="onboardTitle">Bem-vindo!</h2>
-        <p>
-          Fico muito feliz em receber você aqui. Vamos começar uma jornada para que sua alta performance seja acompanhada de bem-estar e tranquilidade. Clique abaixo para prosseguir.
-        </p>
-        <button class="btn-onboard" id="btnOnboard" aria-label="Começar">
-          Começar
-        </button>
-      </div>
-    </div>
-
-    <!-- Botão Hamburger com texto "Menu" -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu" title="Menu">
-      <svg viewBox="0 0 100 80">
-        <rect width="100" height="15"></rect>
-        <rect y="30" width="100" height="15"></rect>
-        <rect y="60" width="100" height="15"></rect>
-      </svg>
-      <span>Menu</span>
-    </button>
-
-    <!-- Sidebar de Navegação -->
-    <aside class="sidebar" id="sidebar" aria-label="Menu lateral">
-      <button class="close-btn" id="sidebarCloseBtn" aria-label="Fechar menu">
-        <svg viewBox="0 0 20 20">
-          <line x1="1" y1="1" x2="19" y2="19" stroke="#0056b3" stroke-width="2" />
-          <line x1="19" y1="1" x2="1" y2="19" stroke="#0056b3" stroke-width="2" />
-        </svg>
-      </button>
-      <nav>
-        <ul>
-          <li><a href="#introducao" class="nav-link">Início</a></li>
-          <li><a href="#origens" class="nav-link">Origens</a></li>
-          <li><a href="#sinais" class="nav-link">Sinais</a></li>
-          <li><a href="#rastreio" class="nav-link">Rastreie</a></li>
-          <li><a href="#dicas" class="nav-link">Dicas</a></li>
-          <li><a href="#sobremim" class="nav-link">Sobre Mim</a></li>
-          <li><a href="#contato" class="nav-link">Interação</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- Cabeçalho e Banner -->
-    <header class="banner" role="banner" aria-label="Imagem inspiradora do banner">
-      <div>
-        <h1>Ansiedade em Alta Performance</h1>
-        <p>Transforme desafios em oportunidades e alcance seu máximo potencial com equilíbrio.</p>
-      </div>
-    </header>
-
-    <!-- Navegação Superior (links âncora) -->
-    <nav class="top-nav" role="navigation" aria-label="Menu superior">
-      <ul>
-        <li><a href="#introducao">Início</a></li>
-        <li><a href="#origens">Origens</a></li>
-        <li><a href="#sinais">Sinais</a></li>
-        <li><a href="#rastreio">Rastreie</a></li>
-        <li><a href="#dicas">Dicas</a></li>
-        <li><a href="#sobremim">Sobre Mim</a></li>
-        <li><a href="#contato">Interação</a></li>
-      </ul>
-    </nav>
-
-    <!-- Main: Conteúdo Principal -->
-    <main>
-      <!-- Seção 1: Introdução -->
-      <section id="introducao" tabindex="0" aria-labelledby="introTitulo">
-        <h2 id="introTitulo">
-          <!-- SVG Ícone de Ideia -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M9 21h6v-1H9v1zM12 2C7.03 2 3 6.03 3 11c0 3.87 2.69 7.14 6.44 8.32L10 22h4l.56-2.68C18.31 18.14 21 14.87 21 11c0-4.97-4.03-9-9-9z"
-            />
-          </svg>
-          Introdução
-        </h2>
-        <div class="content">
-          <img
-            src="https://i.pinimg.com/736x/9c/b1/70/9cb17068b6852d8419613bf74b400037.jpg"
-            alt="Ambiente corporativo e acadêmico"
-            class="placeholder-image"
-          />
-          <p>
-            No ambiente corporativo e acadêmico, a busca incessante por resultados muitas vezes gera uma pressão imensa. Se você tem sentido essa exigência constante para se destacar, saiba que é possível aprender a lidar com essa ansiedade de forma autônoma. Aqui, vou compartilhar estratégias práticas para transformar esse desafio em energia positiva e alcançar o equilíbrio necessário para o sucesso.
-          </p>
-        </div>
-      </section>
-
-      <!-- Seção 2: Origens da Ansiedade -->
-      <section id="origens" tabindex="0" aria-labelledby="origensTitulo">
-        <h2 id="origensTitulo">
-          <!-- SVG Ícone de Raiz -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 2C8.13 2 5 5.13 5 9c0 2.42 1.23 4.54 3.09 5.79L8 22l4-3 4 3-0.09-7.21C17.77 13.54 19 11.42 19 9c0-3.87-3.13-7-7-7z"
-            />
-          </svg>
-          Origens
-        </h2>
-        <div class="content">
-          <p>
-            A pressão por resultados, o perfeccionismo e a competitividade desenfreada podem levar ao surgimento da ansiedade. Quando as exigências se acumulam, você pode sentir que seu bem-estar emocional fica em segundo plano.
-          </p>
-          <p>
-            É fundamental identificar o que alimenta essa ansiedade para ajustar sua forma de pensar e agir, encontrando um caminho mais equilibrado.
-          </p>
-        </div>
-      </section>
-
-      <!-- Seção 3: Sinais -->
-      <section id="sinais" tabindex="0" aria-labelledby="sinaisTitulo">
-        <h2 id="sinaisTitulo">
-          <!-- SVG Ícone de Alerta -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-            />
-          </svg>
-          Sinais
-        </h2>
-        <div class="content">
-          <div class="text-block">
-            <p>
-              Fique atento a alguns sinais que podem indicar que a pressão está ultrapassando seus limites:
-            </p>
-            <ul>
-              <li>Sentir uma cobrança interna intensa para atingir metas.</li>
-              <li>Dificuldade para se desconectar do trabalho ou estudos.</li>
-              <li>Problemas para dormir, como insônia frequente.</li>
-              <li>Tensão muscular e dores sem explicação.</li>
-              <li>Irritabilidade em situações cotidianas.</li>
-              <li>Autocrítica constante que fere sua autoconfiança.</li>
-              <li>Falta de foco em tarefas importantes.</li>
-              <li>Sensação de estar sobrecarregado e sem energia.</li>
-            </ul>
-          </div>
-          <img
-            src="https://i.pinimg.com/736x/45/62/af/4562afbfe706b5aad77a35e173c8ce6c.jpg"
-            alt="Sinais de ansiedade"
-            class="placeholder-image"
-          />
-        </div>
-      </section>
-
-      <!-- Seção 4: Rastreie sua Ansiedade -->
-      <section id="rastreio" tabindex="0" aria-labelledby="rastreioTitulo">
-        <h2 id="rastreioTitulo">
-          <!-- SVG Ícone de Monitoramento -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M3 4v16h18V4H3zm16 14H5V6h14v12zM7 8h2v6H7zm4 0h2v6h-2zm4 0h2v6h-2z"
-            />
-          </svg>
-          Rastreie
-        </h2>
-        <div class="content">
-          <p>
-            Preencha a escala de ansiedade para avaliar seu nível de preocupação. Ao entender melhor seu momento atual, você poderá receber dicas personalizadas para gerenciar a ansiedade em ambientes competitivos.
-          </p>
-          <div style="text-align: center; margin: 20px 0;">
-            <a
-              class="btn btn-rastreio"
-              href="https://forms.gle/Ts8LUo42RheEPi4a7"
-              target="_blank"
-              aria-label="Preencher escala de ansiedade"
-            >
-              Preencher Escala de Ansiedade
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Seção 5: Dicas -->
-      <section id="dicas" tabindex="0" aria-labelledby="dicasTitulo">
-        <h2 id="dicasTitulo">
-          <!-- SVG Ícone de Ideias -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 2C8.13 2 5 5.13 5 9c0 3.87 2.69 7.14 6.44 8.32L10 22h4l.56-4.68C16.31 16.14 19 12.87 19 9c0-3.87-3.13-7-7-7z"
-            />
-          </svg>
-          Dicas
-        </h2>
-        <div class="content">
-          <p>
-            A seguir, apresento estratégias simples para que você aprenda a lidar com a ansiedade de forma independente, mantendo a alta performance com tranquilidade:
-          </p>
-          <ul>
-            <li>
-              <strong>Exercício Respiratório:</strong> Inspire pelo nariz em quatro contagens, segure por quatro e expire pela boca em quatro. Repita este ciclo para recuperar a calma.
-            </li>
-            <li>
-              <strong>Desafio aos Pensamentos:</strong> Quando pensamentos negativos aparecerem, questione-os e substitua-os por afirmações realistas.
-            </li>
-            <li>
-              <strong>Autocuidado Diário:</strong> Reserve um momento para cuidar de si mesmo, reconhecendo seu esforço e validando suas emoções.
-            </li>
-            <li>
-              <strong>Aceite seus Sentimentos:</strong> Permita-se sentir sem julgamentos e direcione suas ações de acordo com seus valores.
-            </li>
-            <li>
-              <strong>Atenção Plena:</strong> Dedique alguns minutos para focar na respiração e no presente, deixando de lado preocupações.
-            </li>
-            <li>
-              <strong>Registro de Conquistas:</strong> Anote suas vitórias para fortalecer sua autoconfiança sempre que os pensamentos negativos surgirem.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Seção 6: Sobre Mim -->
-      <section id="sobremim" tabindex="0" aria-labelledby="sobremimTitulo">
-        <h2 id="sobremimTitulo">
-          <!-- SVG Ícone de Perfil -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"
-            />
-          </svg>
-          Sobre Mim
-        </h2>
-        <div class="content">
-          <div>
-            <p>
-              <strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico dedicado a ajudar você a superar desafios emocionais e alcançar equilíbrio, mesmo em cenários de alta demanda.
-            </p>
-            <p>
-              Trabalho com abordagens práticas e eficazes para promover mudanças reais e sustentáveis, proporcionando um ambiente seguro e acolhedor para o seu crescimento pessoal.
-            </p>
-          </div>
-          <div>
-            <img
-              src="https://i.pinimg.com/736x/da/b5/63/dab56383e5343799dcd4df87a4675918.jpg"
-              alt="Minha Foto"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- Seção 7: Contato & Interação -->
-      <section id="contato" tabindex="0" aria-labelledby="contatoTitulo">
-        <h2 id="contatoTitulo">
-          <!-- SVG Ícone de Chat -->
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M21 6h-2v9H5v2c0 1.11.89 2 2 2h11l4 4V8c0-1.11-.89-2-2-2zM17 12V4H3v12h2V6h12z"
-            />
-          </svg>
-          Interação
-        </h2>
-        <div class="content">
-          <p>
-            Este é um espaço para você compartilhar suas experiências, dúvidas ou pensamentos. Escreva sua mensagem e vamos construir juntos um caminho para superar desafios e encontrar o equilíbrio que você merece.
-          </p>
-          <form id="formContato" aria-label="Enviar mensagem para interação">
-            <label for="mensagemContato">Sua Mensagem:</label>
-            <textarea
-              id="mensagemContato"
-              name="mensagemContato"
-              rows="4"
-              placeholder="Digite sua mensagem ou comentário aqui..."
-              required
-            ></textarea>
-            <button type="submit" class="btn" aria-label="Enviar mensagem">
-              Enviar Mensagem
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <!-- Sidebar de Compartilhamento via WhatsApp (apenas ícone) -->
-    <aside class="share-container" aria-label="Compartilhar esta página">
-      <a id="shareButton" href="#" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.02-4.11c.54.5 1.24.81 2.01.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.91 9.81C8.37 9.31 7.67 9 6.9 9 5.24 9 3.9 10.34 3.9 12s1.34 3 3 3c.77 0 1.47-.31 2.01-.81l7.12 4.18c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"
-          />
-        </svg>
-      </a>
-    </aside>
-
-    <!-- Botão "Voltar ao Topo" (apenas ícone) -->
-    <button id="back-to-top" aria-label="Voltar ao topo">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 4l-8 8h6v8h4v-8h6z" />
-      </svg>
-    </button>
-
-    <!-- Seção de Áudio "Encontre sua Calma" -->
-    <div style="text-align: center; margin: 30px 0;">
-      <button
-        class="btn"
-        onclick="document.getElementById('audioCalma').play()"
-        aria-label="Ouça: Encontre sua Calma"
-      >
-        Ouça: Encontre sua Calma
-      </button>
-      <audio
-        id="audioCalma"
-        src="https://github.com/ricmurtapsicologia/ControlePanico/raw/main/Panico.mp3"
-      ></audio>
-    </div>
-
-    <!-- Rodapé: Simétrico e Elegante -->
-    <footer role="contentinfo" aria-label="Rodapé da página">
-      <p>© 2025 Richelmy Murta Psicólogo</p>
-      <p>Especialista em Terapia Cognitivo-Comportamental</p>
-    </footer>
-
-    <!-- JavaScript ES6+: Funcionalidades Interativas e Splash Screen -->
-    <script>
-      // Transição da splash com efeito sway
-      const onboardingModal = document.getElementById("onboardingModal");
-      const onboardingContent = document.getElementById("onboardingContent");
-      document.getElementById("btnOnboard").addEventListener("click", () => {
-        onboardingContent.classList.add("sway");
-        setTimeout(() => {
-          onboardingModal.style.display = "none";
-        }, 500);
-      });
-
-      // Sidebar: Toggle de abertura/fechamento
-      const sidebar = document.getElementById("sidebar");
-      const hamburgerBtn = document.getElementById("hamburgerBtn");
-      const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
-
-      hamburgerBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("active");
-      });
-      sidebarCloseBtn.addEventListener("click", () => {
-        sidebar.classList.remove("active");
-      });
-
-      // Fechar o menu mobile ao clicar em qualquer link (para celular)
-      const navLinks = document.querySelectorAll(".nav-link");
-      navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          sidebar.classList.remove("active");
-        });
-      });
-
-      // Botão "Voltar ao Topo"
-      const backToTopButton = document.getElementById("back-to-top");
-      window.addEventListener("scroll", () => {
-        backToTopButton.style.display = window.scrollY > 300 ? "flex" : "none";
-      });
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      // Compartilhamento via WhatsApp
-      const shareButton = document.getElementById("shareButton");
-      shareButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        const pageUrl = encodeURIComponent(window.location.href);
-        const shareText = encodeURIComponent(
-          "Confira esta estratégia exclusiva para transformar sua ansiedade em alta performance!"
-        );
-        const whatsappUrl = `https://api.whatsapp.com/send?text=${shareText}%20${pageUrl}`;
-        window.open(whatsappUrl, "_blank");
-      });
-
-      // Formulário de Contato: Envio de mensagem via WhatsApp
-      const formContato = document.getElementById("formContato");
-      formContato.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const mensagem = document.getElementById("mensagemContato").value.trim();
-        if (mensagem !== "") {
-          const telefone = "5535984640729"; // +55 35 98464-0729
-          const mensagemEncode = encodeURIComponent(mensagem);
-          const whatsappLink = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagemEncode}`;
-          window.open(whatsappLink, "_blank");
-          formContato.reset();
-        }
-      });
-    </script>
-  </body>
 </html>
