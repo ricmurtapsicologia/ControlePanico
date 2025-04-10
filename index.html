@@ -178,36 +178,38 @@
         font-weight: bold;
       }
 
-      /* Cabeçalho e Banner */
-      header.banner {
-        position: relative;
-        width: 100%;
-        height: 50vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.7)
-          ),
-          url('https://i.pinimg.com/736x/7f/08/d5/7f08d51209653940adc0d8b09578c1a3.jpg') no-repeat center center;
-        background-size: cover;
-        text-align: center;
-      }
-      header.banner h1 {
-        font-size: 3.5rem;
-        font-weight: bold;
-        color: #fff;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-        margin-bottom: 15px;
-      }
-      header.banner p {
-        font-size: 1.5rem;
-        font-weight: 300;
-        color: #fff;
-        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-      }
+   /* Cabeçalho e Banner */
+header.banner {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ajuste a posição do background para mostrar melhor o rosto */
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+    url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg') 
+      no-repeat center 20%;
+  background-size: cover;
+  text-align: center;
+}
+
+header.banner h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+}
+
+header.banner p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
 
       /* Navegação Superior (links âncora) */
       nav.top-nav {
