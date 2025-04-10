@@ -185,7 +185,7 @@
 		  display: flex;
 		  align-items: center;
 		  justify-content: center;
-		  background: 
+		  background:
 		    linear-gradient(
 		      to bottom,
 		      rgba(0, 0, 0, 0.4),
@@ -497,7 +497,16 @@
 		    flex: 1 1 100%;
 		    text-align: center;
 		  }
+		  
+		  /* Nova regra para centralizar imagens nas seções "introducao" e "sinais" */
+		  #introducao .content img.placeholder-image,
+		  #sinais .content img.placeholder-image {
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		  }
 		}
+		
 		@media (max-width: 480px) {
 		  header.banner {
 		    height: 40vh;
@@ -520,6 +529,7 @@
 		    height: 45px;
 		  }
 		}
+		
 	</style>
 </head>
 
