@@ -9,25 +9,26 @@
 	<!-- SEO e Open Graph -->
 	<meta name="description" content="Transforme a ansiedade em alta performance. Saiba como identificar suas origens, reconhecer sinais e receber orientações terapêuticas que equilibram sucesso e bem-estar." />
 	<meta property="og:title" content="Ansiedade na Alta Performance" />
-	<meta property="og:description" content="Eu, como psicólogo, ajudo você a transformar a ansiedade em vantagem competitiva. Descubra estratégias para viver com equilíbrio e sucesso." />
+	<meta property="og:description" content="Eu, como seu psicólogo, ajudo você a transformar a ansiedade em vantagem competitiva. Descubra estratégias para viver com equilíbrio e sucesso." />
 	<meta property="og:image" content="https://i.pinimg.com/736x/a7/3f/2c/a73f2cc4ff4e661859f9b7aa6d15f648.jpg" />
-	<meta property="og:url" content="https://ricmurtapsicologia.github.io/altaperformance/" />
+	<meta property="og:url" content="https://seudominio.github.io/landing-ansiedade/" />
 	<meta property="og:type" content="website" />
 	<title>Ansiedade na Alta Performance | Transforme Desafios em Sucesso</title>
 	<!-- CSS: Estilos modernos, mobile-first e responsivos -->
 	<style>
-		/* Evita scroll horizontal */
-		html, body {
+		/* Impede o scroll horizontal na página */
+		html,
+		body {
 		  overflow-x: hidden;
 		}
 		
-		/* Variáveis de cores, inspiradas no banner (tons de azul e um amarelo de acento) */
+		/* Variáveis de cores, inspiradas no banner (tons de azul e amarelo para contraste) */
 		:root {
-		  --cor-primaria: #0056b3;  /* Azul principal: confiança e serenidade */
-		  --cor-secundaria: #007acc;/* Azul complementar para botões e destaques */
+		  --cor-primaria: #0056b3; /* Azul principal: confiança e serenidade */
+		  --cor-secundaria: #007acc; /* Azul complementar para botões e destaques */
 		  --cor-fundo: #f9f9f9;
 		  --cor-texto: #333;
-		  --cor-acento: #FFC107;    /* Amarelo para destaque */
+		  --cor-acento: #FFC107; /* Amarelo para destacar elementos no mobile */
 		  --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		  --transicao-base: 0.3s;
 		}
@@ -100,6 +101,19 @@
 		.btn-onboard:hover {
 		  background-color: #006fda;
 		}
+		@keyframes sway {
+		  from {
+		    opacity: 1;
+		    transform: translateX(0);
+		  }
+		  to {
+		    opacity: 0;
+		    transform: translateX(100%);
+		  }
+		}
+		.sway {
+		  animation: sway 0.5s ease-out forwards;
+		}
 		
 		/* Sidebar: Menu Lateral */
 		.sidebar {
@@ -171,7 +185,7 @@
 		  display: flex;
 		  align-items: center;
 		  justify-content: center;
-		  background:
+		  background: 
 		    linear-gradient(
 		      to bottom,
 		      rgba(0, 0, 0, 0.4),
@@ -254,7 +268,6 @@
 		section .content {
 		  padding: 20px;
 		}
-		/* Espaçamento extra para parágrafos */
 		section .content p {
 		  margin-bottom: 1em;
 		}
@@ -313,7 +326,7 @@
 		  border-radius: 4px;
 		}
 		
-		/* Seção de Dicas: texto mais detalhado para o usuário */
+		/* Seção de Dicas: texto detalhado para aplicação prática */
 		#dicas .content p {
 		  margin-bottom: 1.2em;
 		}
@@ -323,21 +336,22 @@
 		  line-height: 1.8;
 		}
 		#dicas .content ul li {
-		  margin-bottom: 10px;
+		  margin-bottom: 8px;
 		}
 		#dicas .content ul li strong {
 		  display: block;
 		  margin-bottom: 5px;
 		}
 		
-		/* Seção: Sobre Mim, foto no lado ESQUERDO em desktop e texto do lado DIREITO */
+		/* Seção: Sobre Mim */
 		#sobremim .content {
 		  display: flex;
 		  flex-wrap: nowrap;
+		  gap: 20px;
 		  align-items: center;
 		  text-align: justify;
-		  gap: 20px;
 		}
+		/* No desktop, a foto fica à esquerda e o texto ocupa o restante */
 		#sobremim .content .foto {
 		  flex: 0 0 150px;
 		  display: flex;
@@ -391,7 +405,7 @@
 		  background-color: var(--cor-primaria);
 		}
 		
-		/* Sidebar de Compartilhamento e Botão "Voltar ao Topo" (apenas ícone) */
+		/* Sidebar de Compartilhamento e Botão "Voltar ao Topo" */
 		.share-container,
 		#back-to-top {
 		  position: fixed;
@@ -464,14 +478,19 @@
 		    font-size: 0.9rem;
 		    padding: 5px;
 		  }
-		  #rastreio .content,
+		  /* Centraliza as imagens e garante que os textos fiquem justificados */
+		  #introducao .content,
+		  #origens .content,
+		  #sinais .content,
 		  #dicas .content,
+		  #sobremim .content,
 		  #contato .content {
 		    text-align: justify;
 		  }
-		  /* Ajuste "Sobre Mim" para mobile */
+		  /* Ajuste "Sobre Mim" para mobile: foto e texto em coluna */
 		  #sobremim .content {
-		    flex-wrap: wrap;
+		    flex-direction: column;
+		    align-items: center;
 		  }
 		  #sobremim .content .foto,
 		  #sobremim .content .texto {
@@ -489,12 +508,11 @@
 		  header.banner p {
 		    font-size: 1rem;
 		  }
-		  /* Ajusta o layout em telas muito pequenas */
 		  .onboarding-content {
 		    padding: 20px;
 		    margin: 0 10px;
 		  }
-		  /* Ajuste dos botões fixos para telas menores */
+		  /* Ajusta os botões fixos para telas muito pequenas */
 		  .share-container,
 		  #back-to-top {
 		    bottom: 80px;
@@ -508,9 +526,9 @@
 <body>
 	<!-- Splash Screen (Onboarding) -->
 	<div class="onboarding-modal" id="onboardingModal" role="dialog" aria-modal="true" aria-labelledby="onboardTitle">
-		<div class="onboarding-content">
+		<div class="onboarding-content" id="onboardingContent">
 			<h2 id="onboardTitle">Bem-vindo!</h2>
-			<p> Fico muito feliz em receber você aqui. Vamos começar uma jornada para que sua alta performance seja acompanhada de bem-estar e tranquilidade. Clique abaixo para prosseguir. </p>
+			<p> Fico muito feliz em receber você aqui. Vamos iniciar uma jornada para que sua alta performance seja acompanhada de bem-estar e tranquilidade. Clique abaixo para prosseguir. </p>
 			<button class="btn-onboard" id="btnOnboard" aria-label="Começar"> Começar </button>
 		</div>
 	</div>
@@ -603,12 +621,12 @@
 					<p> Fique atento a alguns sinais que podem indicar que a pressão está ultrapassando seus limites: </p>
 					<ul>
 						<li>Sentir uma cobrança interna intensa para atingir metas.</li>
-						<li>Dificuldade para se desconectar do trabalho ou estudos.</li>
+						<li>Dificuldade para se desconectar do trabalho ou dos estudos.</li>
 						<li>Problemas para dormir, como insônia frequente.</li>
 						<li>Tensão muscular e dores sem explicação.</li>
 						<li>Irritabilidade em situações cotidianas.</li>
 						<li>Autocrítica constante que fere sua autoconfiança.</li>
-						<li>Falta de foco em tarefas importantes.</li>
+						<li>Falta de foco nas tarefas importantes.</li>
 						<li>Sensação de estar sobrecarregado e sem energia.</li>
 					</ul>
 				</div>
@@ -620,17 +638,17 @@
 			<h2 id="rastreioTitulo">
 				<!-- SVG Ícone de Monitoramento -->
 				<svg viewBox="0 0 24 24">
-					<path d="M3 4v16h18V4H3zm16 14H5V6H3v12h16z" />
+					<path d="M3 4v16h18V4H3zm16 14H5V6h14v12zM7 8h2v6H7zm4 0h2v6h-2zm4 0h2v6h-2z" />
 				</svg> Rastreie
 			</h2>
 			<div class="content">
-				<p> Preencha a escala de ansiedade para avaliar seu nível de preocupação. Ao entender melhor seu momento atual, você poderá receber dicas personalizadas para gerenciar a ansiedade em ambientes competitivos. </p>
+				<p> Preencha a escala de ansiedade para avaliar seu nível de preocupação. Com essa avaliação, você terá a oportunidade de receber dicas personalizadas para gerenciar a ansiedade em ambientes competitivos. </p>
 				<div style="text-align: center; margin: 20px 0;">
 					<a class="btn btn-rastreio" href="https://forms.gle/Ts8LUo42RheEPi4a7" target="_blank" aria-label="Preencher escala de ansiedade"> Preencher Escala de Ansiedade </a>
 				</div>
 			</div>
 		</section>
-		<!-- Seção 5: Dicas (mais detalhadas) -->
+		<!-- Seção 5: Dicas -->
 		<section id="dicas" tabindex="0" aria-labelledby="dicasTitulo">
 			<h2 id="dicasTitulo">
 				<!-- SVG Ícone de Ideias -->
@@ -639,30 +657,30 @@
 				</svg> Dicas
 			</h2>
 			<div class="content">
-				<p> Confira algumas estratégias específicas que você pode aplicar no dia a dia, tanto no ambiente corporativo quanto no acadêmico, para lidar com a ansiedade de forma prática e segura: </p>
+				<p> Confira estratégias práticas que você pode aplicar no seu dia a dia, seja no ambiente corporativo ou acadêmico, para lidar com a ansiedade de forma eficaz: </p>
 				<ul>
 					<li>
-						<strong>Exercício Respiratório no Local de Trabalho:</strong> Quando sentir a tensão aumentar, feche os olhos por alguns segundos (se possível), inspire pelo nariz em quatro contagens, segure o ar por quatro, e expire pela boca em quatro. Repita por pelo menos um minuto para aliviar a agitação.
+						<strong>Exercício Respiratório:</strong> Quando sentir a tensão aumentando, feche os olhos por alguns instantes (se possível), inspire pelo nariz em quatro contagens, segure por quatro e expire pela boca em quatro. Faça isso por um minuto para reduzir a agitação.
 					</li>
 					<li>
-						<strong>Desafio aos Pensamentos Limitantes:</strong> Tenha um pequeno caderno ou anotações no celular. Sempre que surgir um pensamento negativo (“Não vou dar conta”, “Estou atrasado demais”), escreva-o e questione se ele é realmente verdadeiro. Reescreva de forma positiva e realista.
+						<strong>Desafio aos Pensamentos:</strong> Mantenha um caderno ou aplicativo de notas. Quando pensamentos negativos surgirem – como "não vou conseguir" ou "é demais para mim" – anote-os, questione sua veracidade e reescreva-os de maneira mais realista e positiva.
 					</li>
 					<li>
-						<strong>Autocuidado Diário em Pequenos Intervalos:</strong> Faça micro-pausas de 5 minutos para alongar o corpo, beber água ou ouvir uma música relaxante. Pequenas interrupções podem reduzir a sobrecarga mental e melhorar sua concentração.
+						<strong>Autocuidado Diário:</strong> Programe pequenas pausas durante o dia para alongar, caminhar ou simplesmente fazer uma pausa para um café. Esses momentos ajudam a aliviar o estresse e a manter o foco.
 					</li>
 					<li>
-						<strong>Aceite seus Sentimentos e Pratique Feedback Positivo:</strong> Em reuniões, avalie suas emoções sem se julgar. Caso esteja nervoso, reconheça isso internamente e reafirme seus valores: “Estou aqui para aprender e contribuir. É normal sentir ansiedade, mas posso transformá-la em foco.”
+						<strong>Aceite seus Sentimentos:</strong> Permita-se reconhecer suas emoções sem se julgar. Respire fundo e lembre-se: sentir é humano. Direcione suas ações de acordo com seus valores para diminuir a pressão interna.
 					</li>
 					<li>
-						<strong>Atenção Plena durante Atividades Rotineiras:</strong> Ao responder e-mails ou estudar, concentre-se completamente na tarefa por períodos de 20-30 minutos (técnica Pomodoro), deixando outras preocupações de lado durante esse intervalo.
+						<strong>Atenção Plena no Trabalho/Estudos:</strong> Experimente a técnica Pomodoro: dedique 20 a 30 minutos para uma tarefa com foco total, seguido por um breve intervalo. Isso pode melhorar sua concentração e reduzir a sobrecarga mental.
 					</li>
 					<li>
-						<strong>Registro de Conquistas Diárias:</strong> No final do expediente ou do dia de estudos, anote pelo menos três coisas que deram certo. Esse hábito fortalece a autoconfiança e diminui a percepção de fracasso quando algo não sai como planejado.
+						<strong>Registro de Conquistas:</strong> Ao final do dia, anote pelo menos três coisas que você realizou com sucesso. Esse hábito reforça sua autoconfiança e ajuda a combater a autocrítica.
 					</li>
 				</ul>
 			</div>
 		</section>
-		<!-- Seção 6: Sobre Mim (foto à esquerda em desktop) -->
+		<!-- Seção 6: Sobre Mim -->
 		<section id="sobremim" tabindex="0" aria-labelledby="sobremimTitulo">
 			<h2 id="sobremimTitulo">
 				<!-- SVG Ícone de Perfil -->
@@ -676,9 +694,9 @@
 				</div>
 				<div class="texto">
 					<p>
-						<strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico dedicado a ajudar você a superar desafios emocionais e alcançar equilíbrio, mesmo em cenários de alta demanda.
+						<strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico. Minha abordagem é baseada na Terapia Cognitivo-Comportamental e também possuo formação em Terapia do Esquema. Dedico-me a ajudar você a superar desafios emocionais e a encontrar um equilíbrio sustentável, mesmo em cenários de alta demanda.
 					</p>
-					<p> Trabalho com abordagens práticas e eficazes para promover mudanças reais e sustentáveis, proporcionando um ambiente seguro e acolhedor para o seu crescimento pessoal. </p>
+					<p> Trabalho com métodos práticos e eficazes que promovem mudanças reais, proporcionando um ambiente seguro e acolhedor para o seu crescimento pessoal. </p>
 				</div>
 			</div>
 		</section>
@@ -700,17 +718,11 @@
 			</div>
 		</section>
 	</main>
-	<!-- Botão de Compartilhamento via WhatsApp -->
+	<!-- Sidebar de Compartilhamento via WhatsApp (apenas ícone) -->
 	<aside class="share-container" aria-label="Compartilhar esta página">
 		<a id="shareButton" href="#" target="_blank">
 			<svg viewBox="0 0 24 24">
-				<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 
-            0-.24-.04-.47-.09-.7l7.02-4.11c.54.5 1.24.81 2.01.81 
-            1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 
-            .24.04.47.09.7L8.91 9.81C8.37 9.31 7.67 9 6.9 
-            9 5.24 9 3.9 10.34 3.9 12s1.34 3 3 3c.77 0 
-            1.47-.31 2.01-.81l7.12 4.18c-.05.21-.08.43-.08.65 
-            0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z" />
+				<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.02-4.11c.54.5 1.24.81 2.01.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.91 9.81C8.37 9.31 7.67 9 6.9 9 5.24 9 3.9 10.34 3.9 12s1.34 3 3 3c.77 0 1.47-.31 2.01-.81l7.12 4.18c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z" />
 			</svg>
 		</a>
 	</aside>
@@ -723,14 +735,18 @@
 	<!-- Rodapé: Centralizado e Simétrico -->
 	<footer role="contentinfo" aria-label="Rodapé da página">
 		<p>© 2025 Richelmy Murta Psicólogo</p>
-		<p>Especialista em Terapia Cognitivo-Comportamental</p>
+		<p>Especialista em Terapia Cognitivo-Comportamental e Formação em Terapia do Esquema</p>
 	</footer>
 	<!-- JavaScript ES6+: Funcionalidades Interativas e Splash Screen -->
 	<script>
-		// Splash Screen: Fechar ao clicar em "Começar"
+		// Splash Screen: Fechar ao clicar em "Começar" com efeito sway
 		const onboardingModal = document.getElementById("onboardingModal");
+		const onboardingContent = document.getElementById("onboardingContent");
 		document.getElementById("btnOnboard").addEventListener("click", () => {
-		  onboardingModal.style.display = "none";
+		  onboardingContent.classList.add("sway");
+		  setTimeout(() => {
+		    onboardingModal.style.display = "none";
+		  }, 500);
 		});
 		
 		// Sidebar: Toggle de abertura/fechamento
@@ -767,9 +783,7 @@
 		shareButton.addEventListener("click", (e) => {
 		  e.preventDefault();
 		  const pageUrl = encodeURIComponent(window.location.href);
-		  const shareText = encodeURIComponent(
-		    "Confira esta estratégia exclusiva para transformar sua ansiedade em alta performance!"
-		  );
+		  const shareText = encodeURIComponent("Confira esta estratégia exclusiva para transformar sua ansiedade em alta performance!");
 		  const whatsappUrl = `https://api.whatsapp.com/send?text=${shareText}%20${pageUrl}`;
 		  window.open(whatsappUrl, "_blank");
 		});
