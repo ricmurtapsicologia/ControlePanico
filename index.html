@@ -1,426 +1,864 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+  <head>
+    <!-- Meta Tags Básicas -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Material terapêutico para ansiedade e ataques de pânico com técnicas práticas e recursos úteis.">
-<title>Crises de Ansiedade e Ataques de Pânico</title>
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Crises de Ansiedade e Ataques de Pânico">
-<meta property="og:description" content="Descubra como identificar e lidar com crises de ansiedade e ataques de pânico usando estratégias eficazes.">
-<meta property="og:image" content="https://i.pinimg.com/736x/1f/71/a4/1f71a430cf0c616d83382e0ab39ccdec.jpg">
-<meta property="og:url" content="https://ricmurtapsicologia.github.io/ControlePanico/">
-<meta property="og:type" content="website">
+    <!-- SEO e Open Graph -->
+    <meta
+      name="description"
+      content="Transforme a ansiedade em alta performance. Saiba como identificar suas origens, reconhecer sinais e receber orientações terapêuticas que equilibram sucesso e bem-estar."
+    />
+    <meta property="og:title" content="Ansiedade na Alta Performance" />
+    <meta
+      property="og:description"
+      content="Eu, como seu psicólogo, ajudo você a transformar a ansiedade em vantagem competitiva. Descubra estratégias para viver com equilíbrio e sucesso."
+    />
+    <meta
+      property="og:image"
+      content="https://i.pinimg.com/736x/a7/3f/2c/a73f2cc4ff4e661859f9b7aa6d15f648.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://seudominio.github.io/landing-ansiedade/"
+    />
+    <meta property="og:type" content="website" />
+    <title>Ansiedade na Alta Performance | Transforme Desafios em Sucesso</title>
 
-	<style>
-		/* Estilos gerais */
-		body {
-		    font-family: Arial, sans-serif;
-		    margin: 0;
-		    padding: 0;
-		    background: #f4f4f4;
-		    color: #333;
-		}
-		
-		.banner {
-		    position: relative;
-		    width: calc(100% - 40px);
-		    max-width: 1200px;
-		    margin: 40px auto;
-		    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-		        url('https://i.pinimg.com/736x/1f/71/a4/1f71a430cf0c616d83382e0ab39ccdec.jpg') no-repeat center bottom;
-		    background-size: cover;
-		    height: 350px;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    color: white;
-		    text-align: center;
-		    border-radius: 10px;
-		    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-		}
-		
-		.banner h1 {
-		    font-size: 3rem;
-		    font-weight: bold;
-		    margin-bottom: 10px;
-		    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-		}
-		
-		.banner p {
-		    font-size: 1.3rem;
-		    line-height: 1.8;
-		    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-		}
-		
-		.container {
-		    max-width: 1200px;
-		    margin: 20px auto;
-		    padding: 20px;
-		    background: #ffffff;
-		    border-radius: 10px;
-		    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		}
-		
-		.section {
-		    margin-bottom: 30px;
-		    border: 1px solid #0056b3;
-		    border-radius: 8px;
-		    background-color: #eaf3ff;
-		    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-		}
-		
-		.section h2 {
-		    background-color: #0056b3;
-		    color: #fff;
-		    padding: 15px;
-		    margin: 0;
-		    cursor: pointer;
-		    font-size: 1.8em;
-		    text-align: center;
-		    border-bottom: 3px solid #ffa500;
-		    border-radius: 8px 8px 0 0;
-		    transition: background-color 0.3s;
-		}
-		
-		.section h2:hover {
-		    background-color: #0044cc;
-		}
-		
-		.section-content {
-		    display: none;
-		    padding: 20px;
-		    text-align: justify;
-		    line-height: 1.8;
-		    animation: slideDown 0.3s ease-out;
-		}
-		
-		.section-content ul {
-		    margin: 15px 0;
-		    padding-left: 20px;
-		}
-		
-		.section-content ul li {
-		    margin-bottom: 10px;
-		}
-		
-		@keyframes slideDown {
-		    from {
-		        transform: translateY(-20px);
-		        opacity: 0;
-		    }
-		
-		    to {
-		        transform: translateY(0);
-		        opacity: 1;
-		    }
-		}
-		
-		iframe {
-		    border: 2px solid #0056b3;
-		    border-radius: 8px;
-		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		    margin-top: 10px;
-		    width: 100%;
-		    height: 315px;
-		}
-		
-		footer {
-		    text-align: center;
-		    padding: 15px;
-		    background-color: rgba(0, 86, 179, 0.9);
-		    color: #fff;
-		    margin-top: 20px;
-		    border-radius: 0 0 10px 10px;
-		}
-		
-		footer p {
-		    margin: 5px 0;
-		}
-		
-		/* Responsividade para tablets */
-		@media (max-width: 768px) {
-		    .banner {
-		        height: 300px;
-		    }
-		
-		    .banner h1 {
-		        font-size: 2.5rem;
-		    }
-		
-		    .banner p {
-		        font-size: 1.1rem;
-		    }
-		
-		    .container {
-		        padding: 15px;
-		    }
-		
-		    .section h2 {
-		        font-size: 1.5em;
-		    }
-		}
-		
-		/* Responsividade para smartphones */
-		@media (max-width: 480px) {
-		    .banner {
-		        height: 250px;
-		    }
-		
-		    .banner h1 {
-		        font-size: 2rem;
-		    }
-		
-		    .banner p {
-		        font-size: 1rem;
-		    }
-		
-		    .container {
-		        padding: 10px;
-		    }
-		
-		    .section h2 {
-		        font-size: 1.3em;
-		    }
-		
-		    iframe {
-		        height: 250px;
-		    }
-		}
-	</style>
-</head>
+    <!-- CSS: Estilos modernos, mobile-first e responsivos -->
+    <style>
+      /* Variáveis de cores, inspiradas no banner (tons de azul) */
+      :root {
+        --cor-primaria: #0056b3;      /* Azul principal: confiança e serenidade */
+        --cor-secundaria: #007acc;    /* Azul complementar para botões e destaques */
+        --cor-fundo: #f9f9f9;
+        --cor-texto: #333;
+        --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        --transicao-base: 0.3s;
+      }
 
-<body>
-	<div class="banner" style="background: url('https://i.pinimg.com/736x/1f/71/a4/1f71a430cf0c616d83382e0ab39ccdec.jpg') no-repeat center bottom; background-size: cover; height: 350px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
-		<h1 style="font-size: 3rem; font-weight: bold; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);"> Crises de Ansiedade e Ataques de Pânico </h1>
-	</div>
-</body>
-<div class="container">
-	<div class="section">
-		<h2 onclick="toggleContent(this)">1. Introdução</h2>
-		<div class="section-content">
-			<p>Este material foi criado com o objetivo de ajudar você, Roziane, a entender melhor o que está acontecendo em momentos de crise de ansiedade e ataques de pânico. Vamos conversar sobre o que esses momentos significam, por que eles acontecem e, principalmente, como você pode lidar com eles de forma prática e eficaz.</p>
-			<p>Sentir ansiedade em alguns momentos é natural, mas quando ela se torna intensa demais e afeta sua vida, pode ser assustador. Ataques de pânico, por exemplo, vêm de repente e podem causar sintomas físicos como palpitações, falta de ar, tontura e um medo que parece incontrolável. Aqui você vai encontrar informações claras e técnicas simples que podem te ajudar a passar por esses momentos com mais segurança e confiança.</p>
-			<p>É importante lembrar que você não está sozinha. O que você está sentindo é mais comum do que parece e existem caminhos que ajudam a reduzir esses episódios e até evitá-los. Este guia é seu companheiro para esses momentos.</p>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">2. Entendendo a Ansiedade e os Ataques de Pânico</h2>
-		<div class="section-content">
-			<p><strong>O que é ansiedade?</strong></p>
-			<p>Ansiedade é aquele sentimento de preocupação, tensão ou medo que aparece quando você sente que algo pode dar errado ou está fora do seu controle. Ela tem um papel importante para nos proteger, como quando estamos em perigo, mas às vezes ela acontece mesmo quando não há uma ameaça real.</p>
-			<p><strong>O que são ataques de pânico?</strong></p>
-			<p>Os ataques de pânico são momentos de medo intenso que chegam de repente, como se o seu corpo acreditasse que está em perigo, mesmo que não esteja. Eles podem vir acompanhados de sintomas como:</p>
-			<ul>
-				<li>Falta de ar ou sensação de sufocamento;</li>
-				<li>Palpitações ou coração acelerado;</li>
-				<li>Suor excessivo;</li>
-				<li>Tontura ou sensação de desmaio;</li>
-				<li>Medo de perder o controle ou de “ficar louca(o)”;</li>
-				<li>Sensação de desconexão com o mundo ao seu redor.</li>
-			</ul>
-			<p>Mesmo que os sintomas pareçam perigosos, como se você estivesse prestes a ter um ataque cardíaco ou algo grave, o ataque de pânico não traz risco físico real. Ele é o seu corpo respondendo de maneira exagerada a um gatilho de ansiedade.</p>
-			<p><strong>Como saber se é transtorno de pânico?</strong></p>
-			<p>Se esses ataques acontecem com frequência e você começa a evitar lugares ou situações com medo de que eles voltem, isso pode ser um sinal de transtorno de pânico. A boa notícia é que existem formas de tratar isso e voltar a ter uma vida mais tranquila.</p>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">3. Como Reconhecer os Sinais e Sintomas</h2>
-		<div class="section-content">
-			<p>Quando a ansiedade ou um ataque de pânico está se aproximando, seu corpo começa a dar sinais. Aprender a reconhecer esses sinais é o primeiro passo para lidar com eles de forma mais tranquila. Aqui estão alguns dos sintomas mais comuns:</p>
-			<p><strong>Sinais Físicos:</strong></p>
-			<ul>
-				<li>Seu coração bate mais rápido ou parece estar “disparado”;</li>
-				<li>Você começa a suar, mesmo que o ambiente esteja fresco;</li>
-				<li>Sente dificuldade para respirar, como se o ar não fosse suficiente;</li>
-				<li>Tremores ou sensações estranhas no corpo;</li>
-				<li>Tontura ou uma sensação de que vai desmaiar;</li>
-				<li>Ondas de calor ou calafrios sem motivo aparente.</li>
-			</ul>
-			<p><strong>Sinais Mentais e Emocionais:</strong></p>
-			<ul>
-				<li>Medo intenso de que algo ruim vai acontecer;</li>
-				<li>Sentimento de estar desconectada da realidade ao seu redor;</li>
-				<li>Pensamentos como “Eu vou perder o controle” ou “Algo terrível vai acontecer agora”;</li>
-				<li>Sensação de impotência diante do que está acontecendo.</li>
-			</ul>
-			<p><strong>O que fazer quando esses sinais aparecerem?</strong></p>
-			<p>O mais importante é lembrar que, embora os sintomas sejam desconfortáveis, eles não são perigosos. Seu corpo está apenas reagindo a um pico de ansiedade e, com as estratégias certas, esses sintomas vão diminuir e desaparecer.</p>
-			<p>Respire fundo, lembre-se de que isso é temporário, e use algumas das técnicas que você vai aprender aqui para se acalmar.</p>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">4. Técnicas Cognitivas para Mudar Pensamentos</h2>
-		<div class="section-content">
-			<p>Os pensamentos são como uma conversa interna que temos o tempo todo. Quando estamos ansiosos, essa conversa pode ser cheia de medos e ideias distorcidas, que aumentam ainda mais a ansiedade. Mas é possível mudar isso!</p>
-			<p><strong>1. Reestruturação Cognitiva:</strong></p>
-			<p>Essa técnica é como “conversar” com seus pensamentos ansiosos para torná-los mais realistas e equilibrados. Aqui está como fazer:</p>
-			<ul>
-				<li><strong>Identifique o pensamento:</strong> Pergunte a si mesma o que está pensando. Exemplo: “Eu vou desmaiar se sair de casa”.</li>
-				<li><strong>Questione esse pensamento:</strong> Pergunte: “Tenho evidências de que isso já aconteceu antes? Por que estou pensando isso?”.</li>
-				<li><strong>Reformule:</strong> Substitua por algo mais realista: “Meu corpo está reagindo à ansiedade, mas eu estou segura e isso vai passar.”</li>
-			</ul>
-			<p><strong>2. Diário de Pensamentos:</strong></p>
-			<p>Escrever o que você está pensando e sentindo pode ajudar a aliviar a ansiedade e trazer clareza. No diário, registre:</p>
-			<ul>
-				<li><strong>Situação:</strong> O que aconteceu ou o que você estava fazendo?</li>
-				<li><strong>Pensamento:</strong> Que ideia passou pela sua cabeça?</li>
-				<li><strong>Sentimento:</strong> O que você sentiu?</li>
-				<li><strong>Solução:</strong> Como você pode pensar de forma diferente sobre isso?</li>
-			</ul>
-			<p>Com o tempo, você vai perceber que muitos dos seus pensamentos ansiosos não têm base na realidade e podem ser substituídos por outros mais leves e racionais.</p>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">5. Técnicas de Regulação Emocional</h2>
-		<div class="section-content">
-			<p>Quando você está no meio de uma crise de ansiedade ou sente que ela está começando, é importante ter ferramentas para ajudar o seu corpo e mente a se acalmarem. Aqui estão duas técnicas simples que você pode praticar:</p>
-			<p><strong>1. Respiração Quadrada:</strong></p>
-			<p>Controlar a respiração é uma das formas mais eficazes de reduzir a ansiedade, porque ajuda a desacelerar o seu corpo. A respiração quadrada é simples e pode ser feita em qualquer lugar. Siga os passos:</p>
-			<ul>
-				<li><strong>Inspire:</strong> Respire pelo nariz contando até 4, imaginando o ar entrando em seus pulmões.</li>
-				<li><strong>Segure:</strong> Mantenha o ar nos pulmões por 4 segundos.</li>
-				<li><strong>Expire:</strong> Solte o ar lentamente pela boca enquanto conta até 4.</li>
-				<li><strong>Pare:</strong> Fique com os pulmões vazios por mais 4 segundos antes de repetir.</li>
-				<ul>
-					<p>Repita esse ciclo pelo menos 4 vezes. Você vai perceber que seu corpo começa a relaxar e os sintomas de ansiedade diminuem.</p>
-					<p><strong>Assista a um vídeo explicativo:</strong></p>
-					<iframe src="https://www.youtube.com/embed/sr9RdpP8oXc" title="Respiração e Ansiedade - Vídeo Explicativo" style="width: 100%; max-width: 300px; height: 200px; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-top: 10px;"></iframe>
-					<p><strong>2. Exercício de Atenção Plena (Mindfulness):</strong></p>
-					<p>O mindfulness ajuda você a focar no presente, tirando a atenção dos pensamentos ansiosos. Experimente este exercício chamado “5-4-3-2-1”:</p>
-				</ul>
-				<li><strong>5 coisas que você pode ver:</strong> Olhe ao seu redor e identifique cinco objetos, como uma cadeira ou uma árvore.</li>
-				<li><strong>4 coisas que você pode tocar:</strong> Toque em algo ao seu alcance, como a textura da sua roupa ou uma mesa.</li>
-				<li><strong>3 sons que você pode ouvir:</strong> Preste atenção aos sons, como o canto de um pássaro ou o barulho do vento.</li>
-				<li><strong>2 aromas que você pode sentir:</strong> Inspire profundamente e identifique dois cheiros próximos.</li>
-				<li><strong>1 sabor que você pode perceber:</strong> Preste atenção ao gosto que sente na boca, como o de um café ou chá.</li>
-			</ul>
-			<p>Esse exercício ajuda você a “aterrar” no momento presente, diminuindo a intensidade da ansiedade.</p>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">6. Técnicas Comportamentais</h2>
-		<div class="section-content">
-			<p>As técnicas comportamentais são ações que você pode praticar para lidar com a ansiedade. Elas ajudam a diminuir o medo e a insegurança em situações que parecem difíceis. Vamos conhecer algumas delas:</p>
-			<p><strong>1. Dessensibilização Sistemática:</strong></p>
-			<p>Essa técnica funciona como um treino para encarar situações que causam ansiedade, mas de forma gradual e com calma. O segredo é ir devagar, respeitando seus limites. Veja como fazer:</p>
-			<ul>
-				<li><strong>Passo 1:</strong> Faça uma lista das situações que causam ansiedade, da menos à mais desafiadora. Por exemplo: falar com um colega (mais fácil) até falar em público (mais difícil).</li>
-				<li><strong>Passo 2:</strong> Comece com a situação mais fácil da lista. Antes de enfrentá-la, pratique uma técnica de relaxamento, como a respiração quadrada.</li>
-				<li><strong>Passo 3:</strong> Enfrente a situação. Quando perceber que conseguiu lidar com ela sem grandes dificuldades, passe para a próxima da lista.</li>
-			</ul>
-			<p>Essa técnica te ajuda a ganhar confiança aos poucos, reduzindo o impacto das situações que antes pareciam assustadoras.</p>
-			<p><strong>2. Envolvimento em Atividades Positivas:</strong></p>
-			<p>Quando a ansiedade estiver forte, dedicar-se a algo que você gosta pode ajudar a mudar o foco e aliviar os sintomas. Aqui estão algumas sugestões:</p>
-			<ul>
-				<li><strong>Atividades físicas:</strong> Caminhadas ao ar livre, yoga ou mesmo dançar em casa podem ajudar a liberar a tensão acumulada no corpo.</li>
-				<li><strong>Expressão criativa:</strong> Pintar, desenhar, escrever ou até cozinhar algo especial são formas de canalizar suas emoções de maneira positiva.</li>
-				<li><strong>Contato com a natureza:</strong> Passar um tempo em parques, praças ou perto de árvores pode trazer uma sensação de tranquilidade.</li>
-				<li><strong>Música e filmes:</strong> Ouvir suas músicas favoritas ou assistir a algo leve e divertido ajuda a acalmar a mente.</li>
-			</ul>
-			<p>Essas atividades são como “pausas mentais” para o seu cérebro. Elas ajudam a aliviar o peso da ansiedade e trazem momentos de alegria e alívio.</p>
-			<p><strong>3. Criação de uma Zona de Conforto:</strong></p>
-			<p>Monte um espaço em sua casa onde você possa se sentir segura e relaxada. Pode ser uma poltrona com uma manta, um cantinho com almofadas e livros ou qualquer lugar que te traga calma. Use esse espaço para fazer exercícios de relaxamento ou simplesmente respirar fundo quando estiver se sentindo sobrecarregada.</p>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">7. Recursos em Vídeo</h2>
-		<div class="section-content">
-			<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-				<!-- Video 1 -->
-				<div style="flex: 1 1 300px; box-sizing: border-box; text-align: center;">
-					<p><strong>1. Como Superar o Transtorno do Pânico:</strong></p>
-					<iframe src="https://www.youtube.com/embed/PdtHNWYvQQ4" title="Como Superar o Transtorno do Pânico" style="width: 100%; max-width: 300px; height: 200px; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></iframe>
-				</div>
-				<!-- Video 2 -->
-				<div style="flex: 1 1 300px; box-sizing: border-box; text-align: center;">
-					<p><strong>2. O Que Fazer em Crise de Ansiedade:</strong></p>
-					<iframe src="https://www.youtube.com/embed/UJS6C77DV9c" title="O Que Fazer em Caso de Ansiedade Extrema" style="width: 100%; max-width: 300px; height: 200px; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></iframe>
-				</div>
-				<!-- Video 3 -->
-				<div style="flex: 1 1 300px; box-sizing: border-box; text-align: center;">
-					<p><strong>3. Técnica de Respiração Quadrada:</strong></p>
-					<iframe src="https://www.youtube.com/embed/85pQAwyNgYI" title="Técnica de Respiração Quadrada" style="width: 100%; max-width: 300px; height: 200px; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></iframe>
-				</div>
-			</div>
-			<div style="text-align: center; margin-top: 20px;">
-				<button class="toggle-btn" onclick="toggleContent(this)" style="padding: 10px 20px; background-color: #0056b3; color: white; border: none; border-radius: 5px; cursor: pointer;"> Fechar </button>
-			</div>
-		</div>
-	</div>
-	<div class="section">
-		<h2 onclick="toggleContent(this)">8. Guia Prático para Controlar a Ansiedade</h2>
-		<div class="section-content">
-			<p>Você já se perguntou por que sentimos ansiedade? A ansiedade é uma emoção natural que funciona como um alerta para possíveis perigos, sejam eles reais ou imaginários. Em níveis moderados, ela é extremamente útil, como quando nos ajuda a nos prepararmos para uma situação importante, como uma prova ou uma entrevista de trabalho.</p>
-			<p>Porém, quando a ansiedade ultrapassa esse papel funcional e se torna constante ou intensa demais, ela pode trazer desconforto, prejudicar nossas relações e até dificultar tarefas do dia a dia. Nessas situações, é importante adotar estratégias para retomar o equilíbrio emocional e melhorar a qualidade de vida.</p>
-			<p>Abaixo, você encontrará dicas práticas para lidar com a ansiedade de forma saudável:</p>
-			<ul>
-				<li><strong>Entenda sua ansiedade:</strong> Lembre-se de que ela é uma reação natural do corpo. Reconhecer que seus sintomas vêm da ansiedade, e não de uma ameaça real, é o primeiro passo para lidar com ela.</li>
-				<li><strong>Pratique a respiração controlada:</strong> Técnicas como a respiração quadrada podem ajudar a acalmar sua mente e reduzir os sintomas físicos.</li>
-				<li><strong>Crie uma rotina de relaxamento:</strong> Reserve um tempo todos os dias para atividades que te tragam calma, como meditação, ouvir música ou tomar um banho quente.</li>
-				<li><strong>Encontre um ambiente seguro:</strong> Sempre que possível, vá para um lugar onde você se sinta acolhido e protegido, longe de estímulos que possam intensificar sua ansiedade.</li>
-				<li><strong>Use afirmações positivas:</strong> Fale para si mesma frases como “Isso é temporário”, “Eu consigo lidar com isso” ou “Estou segura”. Essas palavras ajudam a acalmar sua mente.</li>
-				<li><strong>Tenha alguém para conversar:</strong> Compartilhar o que você sente com alguém de confiança pode aliviar o peso da ansiedade.</li>
-				<li><strong>Evite evitar:</strong> Às vezes, evitar situações que causam ansiedade pode parecer a solução, mas enfrentar essas situações aos poucos ajuda a reduzir o impacto que elas têm sobre você.</li>
-				<li><strong>Seja gentil consigo mesma:</strong> Não se cobre por sentir ansiedade. Lembre-se de que isso faz parte de ser humano, e o importante é aprender a lidar com ela.</li>
-			</ul>
-			<p>Se você quiser um guia mais completo com mais estratégias e exercícios, baixe o manual clicando no botão abaixo:</p>
-			<div style="text-align: center; margin: 20px 0;">
-				<a class="cta" href="https://www.mppi.mp.br/internet/wp-content/uploads/2020/08/1-Ebook-MPPI_Guia-pratico-para-controlar-a-ansiedade-1.pdf" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #ffa500; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s;">Baixar Manual</a>
-			</div>
-		</div>
-	</div>
-	<div style="text-align: center; margin: 30px 0;">
-		<h2 style="color: #0056b3; font-size: 1.8rem;">Precisa de ajuda imediata?</h2>
-		<p style="font-size: 1.2rem; color: #333;">Clique nos botões abaixo para acessar recursos que podem te ajudar agora.</p>
-		<!-- Botão para Registro de Pensamento Disfuncional -->
-		<a href="https://ricmurtapsicologia.github.io/RPD/" target="_blank" style="display: inline-block; margin: 10px; padding: 15px 25px; background-color: #ffa500; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s;"> Registro de Pensamento Disfuncional </a>
-		<!-- Botão com áudio -->
-		<div style="margin: 20px 0;">
-			<button onclick="document.getElementById('audioCalma').play()" style="margin: 10px; padding: 15px 25px; background-color: #ffa500; color: #fff; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;"> Ouça: Encontre sua Calma </button>
-			<audio id="audioCalma" src="https://github.com/ricmurtapsicologia/ControlePanico/raw/main/Panico.mp3"></audio>
-		</div>
-	</div>
-	<footer>
-		<p>© 2025 Richelmy Murta Psicólogo Clínico</p>
-		<p>Especialista em Terapia Cognitivo-Comportamental</p>
-	</footer>
-	<!-- Botão "Voltar ao Topo" -->
-	<button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #0056b3; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);"> Voltar ao Topo </button>
-	<script>
-		// Alternar visibilidade das seções
-		function toggleContent(element) {
-		    const content = element.closest('.section').querySelector('.section-content');
-		    const isVisible = content.style.display === "block";
-		
-		    // Fecha todas as seções abertas
-		    const allSections = document.querySelectorAll('.section-content');
-		    allSections.forEach((section) => {
-		        section.style.display = "none";
-		    });
-		
-		    // Abre ou fecha a seção clicada
-		    if (!isVisible) {
-		        content.style.display = "block";
-		    }
-		}
-		
-		// Exibir ou ocultar o botão "Voltar ao Topo"
-		window.addEventListener('scroll', () => {
-		    const backToTop = document.getElementById('back-to-top');
-		    if (window.scrollY > 300) {
-		        backToTop.style.display = 'block';
-		    } else {
-		        backToTop.style.display = 'none';
-		    }
-		});
-		
-		// Função para rolar até o topo
-		document.getElementById('back-to-top').addEventListener('click', () => {
-		    window.scrollTo({ top: 0, behavior: 'smooth' });
-		});
-	</script>
-	</body>
+      /* Reset global */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: var(--font-principal);
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+      a {
+        color: var(--cor-secundaria);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
+      /* Splash Screen (Onboarding) */
+      .onboarding-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--cor-primaria);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+      .onboarding-content {
+        background: #fff;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        animation: fadeInDown var(--transicao-base);
+      }
+      .onboarding-content h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: var(--cor-primaria);
+      }
+      .onboarding-content p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: var(--cor-texto);
+      }
+      .btn-onboard {
+        padding: 10px 25px;
+        background-color: var(--cor-secundaria);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color var(--transicao-base);
+      }
+      .btn-onboard:hover {
+        background-color: #006fda;
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Sidebar: Menu Lateral */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform var(--transicao-base);
+        z-index: 1500;
+      }
+      .sidebar.active {
+        transform: translateX(250px);
+      }
+      .sidebar nav ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 30px;
+      }
+      .sidebar nav ul li {
+        margin: 15px 0;
+      }
+      .sidebar nav ul li a {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      .sidebar .close-btn {
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+
+      /* Botão Hamburger */
+      .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Espaço entre o ícone e o texto "Menu" */
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1600;
+      }
+      .hamburger svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--cor-primaria);
+      }
+      .hamburger span {
+        font-size: 1rem;
+        color: var(--cor-primaria);
+        font-weight: bold;
+      }
+
+      /* Cabeçalho e Banner */
+      header.banner {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url('https://i.pinimg.com/736x/7f/08/d5/7f08d51209653940adc0d8b09578c1a3.jpg') no-repeat center center;
+        background-size: cover;
+        text-align: center;
+      }
+      header.banner h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        margin-bottom: 15px;
+      }
+      header.banner p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+      }
+
+      /* Navegação Superior (links âncora) */
+      nav.top-nav {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+      }
+      nav.top-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+      }
+      nav.top-nav ul li {
+        margin: 0 15px;
+      }
+      nav.top-nav ul li a {
+        padding: 5px 0;
+        font-weight: bold;
+      }
+
+      /* Main: Conteúdo Principal */
+      main {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      section {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform var(--transicao-base);
+      }
+      section:hover {
+        transform: scale(1.01);
+      }
+      section h2 {
+        background-color: var(--cor-primaria);
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      section h2 svg {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+      }
+      section .content {
+        padding: 20px;
+      }
+      /* Espaçamento extra para parágrafos nos blocos de texto */
+      section .content p {
+        margin-bottom: 1em;
+      }
+
+      /* Seção: Introdução -> Imagem à esquerda e texto à direita */
+      #introducao .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+      #introducao .content img.placeholder-image {
+        flex: 0 0 40%;
+        max-width: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      #introducao .content > p {
+        flex: 1 1 55%;
+        font-size: 1rem;
+        text-align: justify;
+      }
+
+      /* Seção: Origens -> usar mesma formatação de margem que as outras seções */
+      #origens .content {
+        text-align: justify;
+      }
+
+      /* Seção: Sinais & Sintomas -> Texto à esquerda, imagem à direita */
+      #sinais .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+      #sinais .content .text-block {
+        flex: 1 1 55%;
+        text-align: justify;
+      }
+      #sinais .content .text-block p {
+        margin-bottom: 1em; /* Espaçamento entre frase e lista */
+      }
+      #sinais .content ul {
+        margin-left: 20px;
+        list-style-type: disc;
+        line-height: 1.8;
+      }
+      #sinais .content ul li {
+        margin-bottom: 8px;
+      }
+      #sinais .content img.placeholder-image {
+        flex: 0 0 40%;
+        max-width: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      /* Seção de Dicas: Espaçamento adicional entre parágrafo e lista */
+      #dicas .content p {
+        margin-bottom: 1.2em;
+      }
+      #dicas .content ul {
+        margin-left: 20px;
+        list-style-type: disc;
+        line-height: 1.8;
+      }
+      #dicas .content ul li {
+        margin-bottom: 8px;
+      }
+
+      /* Botões de CTA Elegantes */
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--cor-secundaria);
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color var(--transicao-base), transform var(--transicao-base);
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .btn:hover {
+        background-color: #006fda;
+        transform: translateY(-2px);
+      }
+      .btn:active {
+        transform: translateY(0);
+      }
+      .btn-rastreio {
+        background-color: var(--cor-primaria);
+      }
+
+      /* Formulário de Contato */
+      form#formContato {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      form#formContato label {
+        font-weight: bold;
+      }
+      form#formContato textarea {
+        resize: vertical;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: var(--font-principal);
+      }
+      form#formContato button {
+        align-self: flex-start;
+      }
+
+      /* Sidebar de Compartilhamento */
+      .share-container {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+      .share-container a {
+        background-color: var(--cor-secundaria);
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color var(--transicao-base);
+      }
+      .share-container a svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+      }
+      .share-container a:hover {
+        background-color: #006fda;
+      }
+
+      /* Botão "Voltar ao Topo" */
+      #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--cor-primaria);
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        display: none;
+        transition: background-color var(--transicao-base);
+        z-index: 1000;
+      }
+      #back-to-top:hover {
+        background-color: #004494;
+      }
+
+      /* Rodapé: Simétrico e Elegante */
+      footer {
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #eaeaea;
+        margin-top: 40px;
+      }
+      footer p {
+        margin: 5px 0;
+        font-size: 0.95rem;
+      }
+
+      /* Responsividade: Mobile-First */
+      @media (max-width: 768px) {
+        .hamburger span {
+          font-size: 0.9rem;
+        }
+
+        #introducao .content {
+          flex-direction: column;
+          text-align: center;
+        }
+        #introducao .content img.placeholder-image {
+          flex: 0 0 auto;
+          max-width: 80%;
+        }
+
+        #sinais .content {
+          flex-direction: column;
+        }
+        #sinais .content .text-block,
+        #sinais .content img.placeholder-image {
+          flex: 0 0 auto;
+          max-width: 80%;
+          margin: 0 auto;
+        }
+      }
+      @media (max-width: 480px) {
+        header.banner {
+          height: 40vh;
+        }
+        header.banner h1 {
+          font-size: 2rem;
+        }
+        header.banner p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Splash Screen (Onboarding) -->
+    <div
+      class="onboarding-modal"
+      id="onboardingModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="onboardTitle"
+    >
+      <div class="onboarding-content">
+        <h2 id="onboardTitle">Bem-vindo!</h2>
+        <p>
+          Fico muito feliz em receber você aqui. Vamos começar uma jornada para que sua alta performance seja acompanhada de bem-estar e tranquilidade. Clique abaixo para prosseguir.
+        </p>
+        <button class="btn-onboard" id="btnOnboard" aria-label="Começar">
+          Começar
+        </button>
+      </div>
+    </div>
+
+    <!-- Botão Hamburger com texto "Menu" -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu" title="Menu">
+      <svg viewBox="0 0 100 80">
+        <rect width="100" height="15"></rect>
+        <rect y="30" width="100" height="15"></rect>
+        <rect y="60" width="100" height="15"></rect>
+      </svg>
+      <span>Menu</span>
+    </button>
+
+    <!-- Sidebar de Navegação -->
+    <aside class="sidebar" id="sidebar" aria-label="Menu lateral">
+      <button class="close-btn" id="sidebarCloseBtn" aria-label="Fechar menu">
+        <svg viewBox="0 0 20 20">
+          <line x1="1" y1="1" x2="19" y2="19" stroke="#0056b3" stroke-width="2" />
+          <line x1="19" y1="1" x2="1" y2="19" stroke="#0056b3" stroke-width="2" />
+        </svg>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#introducao">Início</a></li>
+          <li><a href="#origens">Origens</a></li>
+          <li><a href="#sinais">Sinais</a></li>
+          <li><a href="#rastreio">Rastreie</a></li>
+          <li><a href="#dicas">Dicas</a></li>
+          <li><a href="#sobremim">Sobre Mim</a></li>
+          <li><a href="#contato">Interação</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Cabeçalho e Banner -->
+    <header class="banner" role="banner" aria-label="Imagem inspiradora do banner">
+      <div>
+        <h1>Ansiedade em Alta Performance</h1>
+        <p>Transforme desafios em oportunidades e alcance seu máximo potencial com equilíbrio.</p>
+      </div>
+    </header>
+
+    <!-- Navegação Superior (links âncora) -->
+    <nav class="top-nav" role="navigation" aria-label="Menu superior">
+      <ul>
+        <li><a href="#introducao">Início</a></li>
+        <li><a href="#origens">Origens</a></li>
+        <li><a href="#sinais">Sinais</a></li>
+        <li><a href="#rastreio">Rastreie</a></li>
+        <li><a href="#dicas">Dicas</a></li>
+        <li><a href="#sobremim">Sobre Mim</a></li>
+        <li><a href="#contato">Interação</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main: Conteúdo Principal -->
+    <main>
+      <!-- Seção 1: Introdução -->
+      <section id="introducao" tabindex="0" aria-labelledby="introTitulo">
+        <h2 id="introTitulo">
+          <!-- SVG Ícone de Ideia -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M9 21h6v-1H9v1zM12 2C7.03 2 3 6.03 3 11c0 3.87 2.69 7.14 6.44 8.32L10 22h4l.56-2.68C18.31 18.14 21 14.87 21 11c0-4.97-4.03-9-9-9z"
+            />
+          </svg>
+          Introdução
+        </h2>
+        <div class="content">
+          <img
+            src="https://i.pinimg.com/736x/9c/b1/70/9cb17068b6852d8419613bf74b400037.jpg"
+            alt="Ambiente corporativo e acadêmico"
+            class="placeholder-image"
+          />
+          <p>
+            No ambiente corporativo e acadêmico, a busca incessante por resultados muitas vezes gera uma pressão imensa. Se você tem sentido essa exigência constante para se destacar, saiba que é possível aprender a lidar com essa ansiedade de forma autônoma. Aqui, vou compartilhar estratégias práticas para que você consiga transformar esse desafio em energia positiva e alcançar o equilíbrio necessário para o sucesso.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção 2: Origens da Ansiedade -->
+      <section id="origens" tabindex="0" aria-labelledby="origensTitulo">
+        <h2 id="origensTitulo">
+          <!-- SVG Ícone de Raiz -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 2.42 1.23 4.54 3.09 5.79L8 22l4-3 4 3-0.09-7.21C17.77 13.54 19 11.42 19 9c0-3.87-3.13-7-7-7z"
+            />
+          </svg>
+          Origens
+        </h2>
+        <div class="content">
+          <p>
+            A pressão por resultados, o perfeccionismo e a competitividade desenfreada podem levar ao surgimento da ansiedade. Quando as exigências se acumulam, você pode sentir que seu bem-estar emocional fica em segundo plano.
+          </p>
+          <p>
+            É importante identificar o que alimenta essa ansiedade para que seja possível ajustar sua forma de pensar e agir, encontrando uma rota mais equilibrada.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção 3: Sinais & Sintomas (Imagem do lado direito) -->
+      <section id="sinais" tabindex="0" aria-labelledby="sinaisTitulo">
+        <h2 id="sinaisTitulo">
+          <!-- SVG Ícone de Alerta -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+            />
+          </svg>
+          Sinais
+        </h2>
+        <div class="content">
+          <div class="text-block">
+            <p style="margin-bottom: 1em;">
+              Fique atento a alguns sinais que podem indicar que a pressão está ultrapassando seus limites:
+            </p>
+            <ul>
+              <li>Sentimento de cobrança interna intensa para atingir metas.</li>
+              <li>Dificuldade para se desconectar do trabalho ou dos estudos.</li>
+              <li>Problemas para dormir, como insônia frequente.</li>
+              <li>Tensão muscular e dores que parecem não ter explicação.</li>
+              <li>Irritabilidade ou nervosismo em situações rotineiras.</li>
+              <li>Críticas constantes a si mesmo, afetando a autoconfiança.</li>
+              <li>Falta de foco em tarefas importantes.</li>
+              <li>Sensação de estar sobrecarregado e sem energia.</li>
+            </ul>
+          </div>
+          <img
+            src="https://i.pinimg.com/736x/45/62/af/4562afbfe706b5aad77a35e173c8ce6c.jpg"
+            alt="Sinais de ansiedade"
+            class="placeholder-image"
+          />
+        </div>
+      </section>
+
+      <!-- Seção 4: Rastreie sua Ansiedade -->
+      <section id="rastreio" tabindex="0" aria-labelledby="rastreioTitulo">
+        <h2 id="rastreioTitulo">
+          <!-- SVG Ícone de Monitoramento -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3 4v16h18V4H3zm16 14H5V6h14v12zM7 8h2v6H7zm4 0h2v6h-2zm4 0h2v6h-2z"
+            />
+          </svg>
+          Rastreie
+        </h2>
+        <div class="content">
+          <p>
+            Preencha a escala de ansiedade para avaliar onde você se encontra neste momento. Ao compreender seus níveis de preocupação, será mais fácil tomar decisões e aplicar as dicas adequadas para manter o equilíbrio em ambientes competitivos.
+          </p>
+          <div style="text-align: center; margin: 20px 0;">
+            <a
+              class="btn btn-rastreio"
+              href="https://forms.gle/Ts8LUo42RheEPi4a7"
+              target="_blank"
+              aria-label="Rastrear minha ansiedade agora"
+            >
+              Preencher Escala de Ansiedade
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 5: Dicas -->
+      <section id="dicas" tabindex="0" aria-labelledby="dicasTitulo">
+        <h2 id="dicasTitulo">
+          <!-- SVG Ícone de Ideias -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 3.87 2.69 7.14 6.44 8.32L10 22h4l.56-4.68C16.31 16.14 19 12.87 19 9c0-3.87-3.13-7-7-7z"
+            />
+          </svg>
+          Dicas
+        </h2>
+        <div class="content">
+          <p>
+            A seguir, apresento algumas estratégias que você pode adotar para lidar com a ansiedade sem perder o foco na alta performance:
+          </p>
+          <ul>
+            <li>
+              <strong>Exercício Respiratório:</strong> Faça um exercício de respiração controlada: inspire pelo nariz em quatro contagens, segure por quatro e expire pela boca em quatro. Repita este ciclo para restaurar a calma.
+            </li>
+            <li>
+              <strong>Desafio aos Pensamentos Negativos:</strong> Quando pensamentos desmotivadores surgirem, questione-os e substitua-os por afirmações realistas e encorajadoras.
+            </li>
+            <li>
+              <strong>Autocuidado Emocional:</strong> Reserve um momento diário para tratar a si mesmo com gentileza, reconhecendo seu esforço e validando suas emoções.
+            </li>
+            <li>
+              <strong>Aceitação dos Sentimentos:</strong> Permita-se sentir suas emoções sem julgamentos e direcione suas ações de acordo com seus valores pessoais.
+            </li>
+            <li>
+              <strong>Atenção Plena:</strong> Dedique alguns minutos diários para focar na respiração e no presente, soltando preocupações passadas ou futuras.
+            </li>
+            <li>
+              <strong>Registro Positivo:</strong> Observe e anote suas conquistas para reforçar sua autoconfiança sempre que a autocrítica aparecer.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Seção 6: Sobre Mim -->
+      <section id="sobremim" tabindex="0" aria-labelledby="sobremimTitulo">
+        <h2 id="sobremimTitulo">
+          <!-- SVG Ícone de Perfil -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"
+            />
+          </svg>
+          Sobre Mim
+        </h2>
+        <div
+          class="content"
+          style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;"
+        >
+          <div style="flex: 1 1 300px;">
+            <p>
+              <strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico com especialização em Terapia Cognitivo-Comportamental (TCC) e Terapia do Esquema. Meu trabalho é ajudá-lo a superar desafios emocionais e alcançar um equilíbrio genuíno, mesmo em cenários de alta demanda.
+            </p>
+            <p>
+              Com experiência no tratamento de depressão, bipolaridade, ansiedade, fobias, dependência emocional e comportamentos autolesivos, ofereço um ambiente seguro e acolhedor para o seu crescimento pessoal.
+            </p>
+            <p>
+              Utilizo abordagens práticas e eficazes para promover mudanças reais e sustentáveis, favorecendo uma vida mais saudável e produtiva.
+            </p>
+          </div>
+          <div style="flex: 0 0 150px; text-align: center;">
+            <img
+              src="https://i.pinimg.com/736x/da/b5/63/dab56383e5343799dcd4df87a4675918.jpg"
+              alt="Minha Foto"
+              style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 7: Contato & Interação -->
+      <section id="contato" tabindex="0" aria-labelledby="contatoTitulo">
+        <h2 id="contatoTitulo">
+          <!-- SVG Ícone de Chat -->
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M21 6h-2v9H5v2c0 1.11.89 2 2 2h11l4 4V8c0-1.11-.89-2-2-2zM17 12V4H3v12h2V6h12z"
+            />
+          </svg>
+          Interação
+        </h2>
+        <div class="content">
+          <p>
+            Este é um espaço para você compartilhar suas experiências, dúvidas ou pensamentos. Escreva sua mensagem e vamos construir caminhos para superar desafios e encontrar o equilíbrio que você precisa.
+          </p>
+          <form id="formContato" aria-label="Enviar mensagem para interação">
+            <label for="mensagemContato">Sua Mensagem:</label>
+            <textarea
+              id="mensagemContato"
+              name="mensagemContato"
+              rows="4"
+              placeholder="Digite sua mensagem ou comentário aqui..."
+              required
+            ></textarea>
+            <button type="submit" class="btn" aria-label="Enviar mensagem">
+              Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar de Compartilhamento via WhatsApp -->
+    <aside class="share-container" aria-label="Compartilhar esta página">
+      <a id="shareButton" href="#" target="_blank">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.02-4.11c.54.5 1.24.81 2.01.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.91 9.81C8.37 9.31 7.67 9 6.9 9 5.24 9 3.9 10.34 3.9 12s1.34 3 3 3c.77 0 1.47-.31 2.01-.81l7.12 4.18c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"
+          />
+        </svg>
+        Compartilhar
+      </a>
+    </aside>
+
+    <!-- Botão "Voltar ao Topo" -->
+    <button id="back-to-top" aria-label="Voltar ao topo">Voltar ao Topo</button>
+
+    <!-- Seção de Áudio "Encontre sua Calma" -->
+    <div style="text-align: center; margin: 30px 0;">
+      <button
+        class="btn"
+        onclick="document.getElementById('audioCalma').play()"
+        aria-label="Ouça: Encontre sua Calma"
+      >
+        Ouça: Encontre sua Calma
+      </button>
+      <audio
+        id="audioCalma"
+        src="https://github.com/ricmurtapsicologia/ControlePanico/raw/main/Panico.mp3"
+      ></audio>
+    </div>
+
+    <!-- Rodapé: Simétrico e Elegante -->
+    <footer role="contentinfo" aria-label="Rodapé da página">
+      <p>© 2025 Richelmy Murta Psicólogo</p>
+      <p>Especialista em Terapia Cognitivo-Comportamental</p>
+    </footer>
+
+    <!-- JavaScript ES6+: Funcionalidades Interativas e Splash Screen -->
+    <script>
+      // Splash Screen: Fechar ao clicar em "Começar"
+      const onboardingModal = document.getElementById("onboardingModal");
+      document.getElementById("btnOnboard").addEventListener("click", () => {
+        onboardingModal.style.display = "none";
+      });
+
+      // Sidebar: Toggle de abertura/fechamento
+      const sidebar = document.getElementById("sidebar");
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+
+      hamburgerBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+      });
+      sidebarCloseBtn.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+      });
+
+      // Botão "Voltar ao Topo"
+      const backToTopButton = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        backToTopButton.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Compartilhamento via WhatsApp
+      const shareButton = document.getElementById("shareButton");
+      shareButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        const pageUrl = encodeURIComponent(window.location.href);
+        const shareText = encodeURIComponent(
+          "Confira esta estratégia exclusiva para transformar sua ansiedade em alta performance!"
+        );
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${shareText}%20${pageUrl}`;
+        window.open(whatsappUrl, "_blank");
+      });
+
+      // Formulário de Contato: Envio de mensagem via WhatsApp
+      const formContato = document.getElementById("formContato");
+      formContato.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const mensagem = document
+          .getElementById("mensagemContato")
+          .value.trim();
+        if (mensagem !== "") {
+          const telefone = "5535984640729"; // +55 35 98464-0729
+          const mensagemEncode = encodeURIComponent(mensagem);
+          const whatsappLink = `https://api.whatsapp.com/send?phone=${telefone}&text=${mensagemEncode}`;
+          window.open(whatsappLink, "_blank");
+          formContato.reset();
+        }
+      });
+    </script>
+  </body>
 </html>
