@@ -51,6 +51,8 @@
         color: var(--cor-texto);
         line-height: 1.6;
         scroll-behavior: smooth;
+        min-height: 100vh;
+        position: relative;
       }
       a {
         color: var(--cor-secundaria);
@@ -154,14 +156,14 @@
         right: 15px;
       }
 
-      /* Botão Hamburger */
+      /* Botão Hamburger com texto "Menu" */
       .hamburger {
         position: fixed;
         top: 20px;
         left: 20px;
         display: flex;
         align-items: center;
-        gap: 5px; /* Espaço entre o ícone e o texto "Menu" */
+        gap: 5px;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -178,38 +180,37 @@
         font-weight: bold;
       }
 
-   /* Cabeçalho e Banner */
-header.banner {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Ajuste a posição do background para mostrar melhor o rosto */
-  background: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-    url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg') 
-      no-repeat center 20%;
-  background-size: cover;
-  text-align: center;
-}
-
-header.banner h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-  margin-bottom: 15px;
-}
-
-header.banner p {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #fff;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-}
-
+      /* Cabeçalho e Banner */
+      header.banner {
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg')
+            no-repeat center 20%;
+        background-size: cover;
+        text-align: center;
+      }
+      header.banner h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        margin-bottom: 15px;
+      }
+      header.banner p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #fff;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+      }
 
       /* Navegação Superior (links âncora) */
       nav.top-nav {
@@ -268,7 +269,7 @@ header.banner p {
       section .content {
         padding: 20px;
       }
-      /* Espaçamento extra para parágrafos nos blocos de texto */
+      /* Espaçamento extra para parágrafos */
       section .content p {
         margin-bottom: 1em;
       }
@@ -292,12 +293,13 @@ header.banner p {
         text-align: justify;
       }
 
-      /* Seção: Origens -> usar mesma formatação de margem que as outras seções */
+      /* Seção: Origens -> Texto com margens consistentes */
       #origens .content {
         text-align: justify;
+        padding: 0 10px;
       }
 
-      /* Seção: Sinais & Sintomas -> Texto à esquerda, imagem à direita */
+      /* Seção: Sinais -> Texto à esquerda, imagem à direita */
       #sinais .content {
         display: flex;
         flex-wrap: wrap;
@@ -309,7 +311,7 @@ header.banner p {
         text-align: justify;
       }
       #sinais .content .text-block p {
-        margin-bottom: 1em; /* Espaçamento entre frase e lista */
+        margin-bottom: 1em;
       }
       #sinais .content ul {
         margin-left: 20px;
@@ -326,7 +328,7 @@ header.banner p {
         border-radius: 4px;
       }
 
-      /* Seção de Dicas: Espaçamento adicional entre parágrafo e lista */
+      /* Seção de Dicas: Espaçamento entre parágrafo e lista */
       #dicas .content p {
         margin-bottom: 1.2em;
       }
@@ -384,53 +386,55 @@ header.banner p {
         align-self: flex-start;
       }
 
-      /* Sidebar de Compartilhamento */
-      .share-container {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 1000;
-      }
-      .share-container a {
-        background-color: var(--cor-secundaria);
-        color: #fff;
-        padding: 10px 15px;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: background-color var(--transicao-base);
-      }
-      .share-container a svg {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-      }
-      .share-container a:hover {
-        background-color: #006fda;
-      }
-
-      /* Botão "Voltar ao Topo" */
+      /* Sidebar de Compartilhamento e Botão "Voltar ao Topo" com tamanhos uniformes */
+      .share-container,
       #back-to-top {
         position: fixed;
+        z-index: 1000;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      .share-container {
+        bottom: 20px;
+        left: 20px;
+      }
+      #back-to-top {
         bottom: 20px;
         right: 20px;
         background-color: var(--cor-primaria);
         color: #fff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         display: none;
         transition: background-color var(--transicao-base);
-        z-index: 1000;
       }
       #back-to-top:hover {
         background-color: #004494;
       }
+      .share-container a {
+        width: 50px;
+        height: 50px;
+        background-color: var(--cor-secundaria);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color var(--transicao-base);
+      }
+      .share-container a:hover {
+        background-color: #006fda;
+      }
+      .share-container a svg {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+      }
 
-      /* Rodapé: Simétrico e Elegante */
+      /* Rodapé: Nunca obstruído e sempre alinhado */
       footer {
         background-color: #fff;
         padding: 20px;
@@ -478,10 +482,16 @@ header.banner p {
         header.banner p {
           font-size: 1rem;
         }
+        /* Ajuste dos botões fixos para não obstruir o rodapé */
+        .share-container,
+        #back-to-top {
+          bottom: 80px;
+          width: 45px;
+          height: 45px;
+        }
       }
     </style>
   </head>
-
   <body>
     <!-- Splash Screen (Onboarding) -->
     <div
@@ -574,7 +584,7 @@ header.banner p {
             class="placeholder-image"
           />
           <p>
-            No ambiente corporativo e acadêmico, a busca incessante por resultados muitas vezes gera uma pressão imensa. Se você tem sentido essa exigência constante para se destacar, saiba que é possível aprender a lidar com essa ansiedade de forma autônoma. Aqui, vou compartilhar estratégias práticas para que você consiga transformar esse desafio em energia positiva e alcançar o equilíbrio necessário para o sucesso.
+            No ambiente corporativo e acadêmico, a busca incessante por resultados muitas vezes gera uma pressão imensa. Se você tem sentido essa exigência constante para se destacar, saiba que é possível aprender a lidar com essa ansiedade de forma autônoma. Aqui, vou compartilhar estratégias práticas para transformar esse desafio em energia positiva e alcançar o equilíbrio necessário para o sucesso.
           </p>
         </div>
       </section>
@@ -595,12 +605,12 @@ header.banner p {
             A pressão por resultados, o perfeccionismo e a competitividade desenfreada podem levar ao surgimento da ansiedade. Quando as exigências se acumulam, você pode sentir que seu bem-estar emocional fica em segundo plano.
           </p>
           <p>
-            É importante identificar o que alimenta essa ansiedade para que seja possível ajustar sua forma de pensar e agir, encontrando uma rota mais equilibrada.
+            É fundamental identificar o que alimenta essa ansiedade para ajustar sua forma de pensar e agir, encontrando um caminho mais equilibrado.
           </p>
         </div>
       </section>
 
-      <!-- Seção 3: Sinais & Sintomas (Imagem do lado direito) -->
+      <!-- Seção 3: Sinais (Imagem do lado direito) -->
       <section id="sinais" tabindex="0" aria-labelledby="sinaisTitulo">
         <h2 id="sinaisTitulo">
           <!-- SVG Ícone de Alerta -->
@@ -617,12 +627,12 @@ header.banner p {
               Fique atento a alguns sinais que podem indicar que a pressão está ultrapassando seus limites:
             </p>
             <ul>
-              <li>Sentimento de cobrança interna intensa para atingir metas.</li>
-              <li>Dificuldade para se desconectar do trabalho ou dos estudos.</li>
+              <li>Sentir uma cobrança interna intensa para atingir metas.</li>
+              <li>Dificuldade para se desconectar do trabalho ou estudos.</li>
               <li>Problemas para dormir, como insônia frequente.</li>
-              <li>Tensão muscular e dores que parecem não ter explicação.</li>
-              <li>Irritabilidade ou nervosismo em situações rotineiras.</li>
-              <li>Críticas constantes a si mesmo, afetando a autoconfiança.</li>
+              <li>Tensão muscular e dores sem explicação.</li>
+              <li>Irritabilidade em situações cotidianas.</li>
+              <li>Autocrítica constante que fere sua autoconfiança.</li>
               <li>Falta de foco em tarefas importantes.</li>
               <li>Sensação de estar sobrecarregado e sem energia.</li>
             </ul>
@@ -648,14 +658,14 @@ header.banner p {
         </h2>
         <div class="content">
           <p>
-            Preencha a escala de ansiedade para avaliar onde você se encontra neste momento. Ao compreender seus níveis de preocupação, será mais fácil tomar decisões e aplicar as dicas adequadas para manter o equilíbrio em ambientes competitivos.
+            Preencha a escala de ansiedade para avaliar seu nível de preocupação. Ao entender melhor seu momento atual, você poderá receber dicas personalizadas para gerenciar a ansiedade em ambientes competitivos.
           </p>
           <div style="text-align: center; margin: 20px 0;">
             <a
               class="btn btn-rastreio"
               href="https://forms.gle/Ts8LUo42RheEPi4a7"
               target="_blank"
-              aria-label="Rastrear minha ansiedade agora"
+              aria-label="Preencher escala de ansiedade"
             >
               Preencher Escala de Ansiedade
             </a>
@@ -676,26 +686,26 @@ header.banner p {
         </h2>
         <div class="content">
           <p>
-            A seguir, apresento algumas estratégias que você pode adotar para lidar com a ansiedade sem perder o foco na alta performance:
+            A seguir, apresento estratégias simples para que você aprenda a lidar com a ansiedade de forma independente, mantendo a alta performance com tranquilidade:
           </p>
           <ul>
             <li>
-              <strong>Exercício Respiratório:</strong> Faça um exercício de respiração controlada: inspire pelo nariz em quatro contagens, segure por quatro e expire pela boca em quatro. Repita este ciclo para restaurar a calma.
+              <strong>Exercício Respiratório:</strong> Inspire pelo nariz em quatro contagens, segure por quatro e expire pela boca em quatro. Repita este ciclo para recuperar a calma.
             </li>
             <li>
-              <strong>Desafio aos Pensamentos Negativos:</strong> Quando pensamentos desmotivadores surgirem, questione-os e substitua-os por afirmações realistas e encorajadoras.
+              <strong>Desafio aos Pensamentos:</strong> Quando pensamentos negativos aparecerem, questione-os e substitua-os por afirmações realistas.
             </li>
             <li>
-              <strong>Autocuidado Emocional:</strong> Reserve um momento diário para tratar a si mesmo com gentileza, reconhecendo seu esforço e validando suas emoções.
+              <strong>Autocuidado Diário:</strong> Reserve um momento para cuidar de si mesmo, reconhecendo seu esforço e validando suas emoções.
             </li>
             <li>
-              <strong>Aceitação dos Sentimentos:</strong> Permita-se sentir suas emoções sem julgamentos e direcione suas ações de acordo com seus valores pessoais.
+              <strong>Aceite seus Sentimentos:</strong> Permita-se sentir sem julgamentos e direcione suas ações de acordo com seus valores.
             </li>
             <li>
-              <strong>Atenção Plena:</strong> Dedique alguns minutos diários para focar na respiração e no presente, soltando preocupações passadas ou futuras.
+              <strong>Atenção Plena:</strong> Dedique alguns minutos para focar na respiração e no presente, deixando de lado preocupações.
             </li>
             <li>
-              <strong>Registro Positivo:</strong> Observe e anote suas conquistas para reforçar sua autoconfiança sempre que a autocrítica aparecer.
+              <strong>Registro de Conquistas:</strong> Anote suas vitórias para fortalecer sua autoconfiança sempre que os pensamentos negativos surgirem.
             </li>
           </ul>
         </div>
@@ -718,13 +728,10 @@ header.banner p {
         >
           <div style="flex: 1 1 300px;">
             <p>
-              <strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico com especialização em Terapia Cognitivo-Comportamental (TCC) e Terapia do Esquema. Meu trabalho é ajudá-lo a superar desafios emocionais e alcançar um equilíbrio genuíno, mesmo em cenários de alta demanda.
+              <strong>Olá, sou Richelmy Murta</strong>, psicólogo clínico dedicado a ajudar você a superar desafios emocionais e alcançar equilíbrio, mesmo em cenários de alta demanda.
             </p>
             <p>
-              Com experiência no tratamento de depressão, bipolaridade, ansiedade, fobias, dependência emocional e comportamentos autolesivos, ofereço um ambiente seguro e acolhedor para o seu crescimento pessoal.
-            </p>
-            <p>
-              Utilizo abordagens práticas e eficazes para promover mudanças reais e sustentáveis, favorecendo uma vida mais saudável e produtiva.
+              Trabalho com abordagens práticas e eficazes para promover mudanças reais e sustentáveis, proporcionando um ambiente seguro e acolhedor para o seu crescimento pessoal.
             </p>
           </div>
           <div style="flex: 0 0 150px; text-align: center;">
@@ -750,7 +757,7 @@ header.banner p {
         </h2>
         <div class="content">
           <p>
-            Este é um espaço para você compartilhar suas experiências, dúvidas ou pensamentos. Escreva sua mensagem e vamos construir caminhos para superar desafios e encontrar o equilíbrio que você precisa.
+            Este é um espaço para você compartilhar suas experiências, dúvidas ou pensamentos. Escreva sua mensagem e vamos construir juntos um caminho para superar desafios e encontrar o equilíbrio que você merece.
           </p>
           <form id="formContato" aria-label="Enviar mensagem para interação">
             <label for="mensagemContato">Sua Mensagem:</label>
@@ -777,7 +784,7 @@ header.banner p {
             d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.02-4.11c.54.5 1.24.81 2.01.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.91 9.81C8.37 9.31 7.67 9 6.9 9 5.24 9 3.9 10.34 3.9 12s1.34 3 3 3c.77 0 1.47-.31 2.01-.81l7.12 4.18c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"
           />
         </svg>
-        Compartilhar
+        <span>Compartilhar</span>
       </a>
     </aside>
 
