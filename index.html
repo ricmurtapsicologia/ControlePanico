@@ -17,518 +17,517 @@
 	<!-- CSS: Estilos modernos, mobile-first e responsivos -->
 	<style>
 		/* Impede o scroll horizontal na página */
-		html,
-		body {
-		  overflow-x: hidden;
-		}
-		
-		/* Variáveis de cores, inspiradas no banner (tons de azul e amarelo para contraste) */
-		:root {
-		  --cor-primaria: #0056b3; /* Azul principal: confiança e serenidade */
-		  --cor-secundaria: #007acc; /* Azul complementar para botões e destaques */
-		  --cor-fundo: #f9f9f9;
-		  --cor-texto: #333;
-		  --cor-acento: #FFC107; /* Amarelo para destacar elementos no mobile */
-		  --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		  --transicao-base: 0.3s;
-		}
-		
-		/* Reset global */
-		* {
-		  margin: 0;
-		  padding: 0;
-		  box-sizing: border-box;
-		}
-		body {
-		  font-family: var(--font-principal);
-		  background-color: var(--cor-fundo);
-		  color: var(--cor-texto);
-		  line-height: 1.6;
-		  scroll-behavior: smooth;
-		  min-height: 100vh;
-		  position: relative;
-		}
-		a {
-		  color: var(--cor-secundaria);
-		  text-decoration: none;
-		}
-		a:hover {
-		  text-decoration: underline;
-		}
-		
-		/* Splash Screen (Onboarding) */
-		.onboarding-modal {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  background-color: var(--cor-primaria);
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  z-index: 2000;
-		  padding: 10px;
-		}
-		.onboarding-content {
-		  background: #fff;
-		  border-radius: 8px;
-		  padding: 30px;
-		  max-width: 500px;
-		  width: 90%;
-		  text-align: center;
-		}
-		.onboarding-content h2 {
-		  font-size: 2rem;
-		  margin-bottom: 15px;
-		  color: var(--cor-primaria);
-		}
-		.onboarding-content p {
-		  margin-bottom: 20px;
-		  font-size: 1.1rem;
-		  color: var(--cor-texto);
-		}
-		.btn-onboard {
-		  padding: 10px 25px;
-		  background-color: var(--cor-secundaria);
-		  color: #fff;
-		  border: none;
-		  border-radius: 50px;
-		  font-size: 1rem;
-		  cursor: pointer;
-		  transition: background-color var(--transicao-base);
-		}
-		.btn-onboard:hover {
-		  background-color: #006fda;
-		}
-		@keyframes sway {
-		  from {
-		    opacity: 1;
-		    transform: translateX(0);
-		  }
-		  to {
-		    opacity: 0;
-		    transform: translateX(100%);
-		  }
-		}
-		.sway {
-		  animation: sway 0.5s ease-out forwards;
-		}
-		
-		/* Sidebar: Menu Lateral */
-		.sidebar {
-		  position: fixed;
-		  top: 0;
-		  left: -250px;
-		  width: 250px;
-		  height: 100%;
-		  background-color: #fff;
-		  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-		  padding: 20px;
-		  transition: transform var(--transicao-base);
-		  z-index: 1500;
-		}
-		.sidebar.active {
-		  transform: translateX(250px);
-		}
-		.sidebar nav ul {
-		  list-style: none;
-		  padding: 0;
-		  margin-top: 30px;
-		}
-		.sidebar nav ul li {
-		  margin: 15px 0;
-		}
-		.sidebar nav ul li a {
-		  font-size: 1.1rem;
-		  font-weight: bold;
-		}
-		.sidebar .close-btn {
-		  background: transparent;
-		  border: none;
-		  font-size: 1.5rem;
-		  cursor: pointer;
-		  position: absolute;
-		  top: 15px;
-		  right: 15px;
-		}
-		
-		/* Botão Hamburger com texto "Menu" */
-		.hamburger {
-		  position: fixed;
-		  top: 20px;
-		  left: 20px;
-		  display: flex;
-		  align-items: center;
-		  gap: 5px;
-		  background: transparent;
-		  border: none;
-		  cursor: pointer;
-		  z-index: 1600;
-		}
-		.hamburger svg {
-		  width: 30px;
-		  height: 30px;
-		  fill: var(--cor-acento);
-		}
-		.hamburger span {
-		  font-size: 1rem;
-		  color: var(--cor-acento);
-		  font-weight: bold;
-		}
-		
-		/* Cabeçalho e Banner */
-		header.banner {
-		  position: relative;
-		  width: 100%;
-		  height: 90vh;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  background:
-		    linear-gradient(
-		      to bottom,
-		      rgba(0, 0, 0, 0.4),
-		      rgba(0, 0, 0, 0.7)
-		    ),
-		    url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg')
-		      no-repeat center 20%;
-		  background-size: cover;
-		  text-align: center;
-		}
-		header.banner h1 {
-		  font-size: 3.5rem;
-		  font-weight: bold;
-		  color: #fff;
-		  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-		  margin-bottom: 15px;
-		}
-		header.banner p {
-		  font-size: 1.5rem;
-		  font-weight: 300;
-		  color: #fff;
-		  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-		}
-		
-		/* Navegação Superior (links âncora) */
-		nav.top-nav {
-		  background-color: #fff;
-		  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		  padding: 10px 0;
-		}
-		nav.top-nav ul {
-		  display: flex;
-		  justify-content: center;
-		  list-style: none;
-		  flex-wrap: wrap;
-		}
-		nav.top-nav ul li {
-		  margin: 0 15px;
-		}
-		nav.top-nav ul li a {
-		  padding: 5px 0;
-		  font-weight: bold;
-		}
-		
-		/* Main: Conteúdo Principal */
-		main {
-		  max-width: 1200px;
-		  margin: 40px auto;
-		  padding: 20px;
-		  display: grid;
-		  grid-template-columns: 1fr;
-		  gap: 40px;
-		}
-		section {
-		  background-color: #fff;
-		  border-radius: 8px;
-		  overflow: hidden;
-		  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		  transition: transform var(--transicao-base);
-		}
-		section:hover {
-		  transform: scale(1.01);
-		}
-		section h2 {
-		  background-color: var(--cor-primaria);
-		  color: #fff;
-		  padding: 15px;
-		  text-align: center;
-		  text-transform: uppercase;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  gap: 10px;
-		}
-		section h2 svg {
-		  width: 24px;
-		  height: 24px;
-		  fill: #fff;
-		}
-		section .content {
-		  padding: 20px;
-		}
-		section .content p {
-		  margin-bottom: 1em;
-		}
-		
-		/* Seção: Introdução -> Imagem à esquerda e texto à direita */
-		#introducao .content {
-		  display: flex;
-		  flex-wrap: wrap;
-		  align-items: center;
-		  gap: 20px;
-		}
-		#introducao .content img.placeholder-image {
-		  flex: 0 0 40%;
-		  max-width: 300px;
-		  object-fit: cover;
-		  border-radius: 4px;
-		}
-		#introducao .content > p {
-		  flex: 1 1 55%;
-		  font-size: 1rem;
-		  text-align: justify;
-		}
-		
-		/* Seção: Origens */
-		#origens .content {
-		  text-align: justify;
-		  padding: 0 10px;
-		}
-		
-		/* Seção: Sinais -> Texto à esquerda, imagem à direita */
-		#sinais .content {
-		  display: flex;
-		  flex-wrap: wrap;
-		  align-items: center;
-		  gap: 20px;
-		}
-		#sinais .content .text-block {
-		  flex: 1 1 55%;
-		  text-align: justify;
-		}
-		#sinais .content .text-block p {
-		  margin-bottom: 1em;
-		}
-		#sinais .content ul {
-		  margin-left: 20px;
-		  list-style-type: disc;
-		  line-height: 1.8;
-		}
-		#sinais .content ul li {
-		  margin-bottom: 8px;
-		}
-		#sinais .content img.placeholder-image {
-		  flex: 0 0 40%;
-		  max-width: 300px;
-		  object-fit: cover;
-		  border-radius: 4px;
-		}
-		
-		/* Seção de Dicas: texto detalhado para aplicação prática */
-		#dicas .content p {
-		  margin-bottom: 1.2em;
-		}
-		#dicas .content ul {
-		  margin-left: 20px;
-		  list-style-type: disc;
-		  line-height: 1.8;
-		}
-		#dicas .content ul li {
-		  margin-bottom: 8px;
-		}
-		#dicas .content ul li strong {
-		  display: block;
-		  margin-bottom: 5px;
-		}
-		
-		/* Seção: Sobre Mim */
-		#sobremim .content {
-		  display: flex;
-		  flex-wrap: nowrap;
-		  gap: 20px;
-		  align-items: center;
-		  text-align: justify;
-		}
-		/* No desktop, a foto fica à esquerda e o texto ocupa o restante */
-		#sobremim .content .foto {
-		  flex: 0 0 150px;
-		  display: flex;
-		  justify-content: center;
-		}
-		#sobremim .content .foto img {
-		  width: 150px;
-		  height: 150px;
-		  object-fit: cover;
-		  border-radius: 50%;
-		}
-		#sobremim .content .texto {
-		  flex: 1 1 auto;
-		}
-		
-		/* Seção: Interação */
-		#contato .content {
-		  text-align: justify;
-		}
-		#contato form#formContato {
-		  display: flex;
-		  flex-direction: column;
-		  gap: 10px;
-		}
-		#contato form#formContato button {
-		  align-self: center;
-		}
-		
-		/* Botões de CTA Elegantes */
-		.btn {
-		  display: inline-block;
-		  padding: 10px 20px;
-		  background-color: var(--cor-secundaria);
-		  color: #fff;
-		  font-weight: bold;
-		  border: none;
-		  border-radius: 50px;
-		  cursor: pointer;
-		  transition: background-color var(--transicao-base), transform var(--transicao-base);
-		  text-align: center;
-		  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
-		.btn:hover {
-		  background-color: #006fda;
-		  transform: translateY(-2px);
-		}
-		.btn:active {
-		  transform: translateY(0);
-		}
-		.btn-rastreio {
-		  background-color: var(--cor-primaria);
-		}
-		
-		/* Sidebar de Compartilhamento e Botão "Voltar ao Topo" */
-		.share-container,
-		#back-to-top {
-		  position: fixed;
-		  z-index: 1000;
-		  width: 50px;
-		  height: 50px;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  border-radius: 50%;
-		}
-		.share-container {
-		  bottom: 20px;
-		  left: 20px;
-		}
-		#back-to-top {
-		  bottom: 20px;
-		  right: 20px;
-		  background-color: var(--cor-primaria);
-		  color: #fff;
-		  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-		  display: none;
-		  transition: background-color var(--transicao-base);
-		}
-		#back-to-top:hover {
-		  background-color: #004494;
-		}
-		.share-container a {
-		  width: 50px;
-		  height: 50px;
-		  background-color: var(--cor-secundaria);
-		  color: #fff;
-		  border-radius: 50%;
-		  display: flex;
-		  align-items: center;
-		  justify-content: center;
-		  transition: background-color var(--transicao-base);
-		}
-		.share-container a:hover {
-		  background-color: #006fda;
-		}
-		.share-container a svg,
-		#back-to-top svg {
-		  width: 24px;
-		  height: 24px;
-		  fill: #fff;
-		}
-		
-		/* Rodapé: Centralizado e Simétrico */
-		footer {
-		  background-color: #fff;
-		  padding: 20px;
-		  text-align: center;
-		  border-top: 1px solid #eaeaea;
-		}
-		footer p {
-		  margin: 5px 0;
-		  font-size: 0.95rem;
-		}
-		
-		/* Responsividade: Mobile-First */
-		@media (max-width: 768px) {
-		  .hamburger span {
-		    font-size: 0.9rem;
-		  }
-		  nav.top-nav ul li {
-		    margin: 0 8px;
-		  }
-		  nav.top-nav ul li a {
-		    font-size: 0.9rem;
-		    padding: 5px;
-		  }
-		  /* Centraliza as imagens e garante que os textos fiquem justificados */
-		  #introducao .content,
-		  #origens .content,
-		  #sinais .content,
-		  #dicas .content,
-		  #sobremim .content,
-		  #contato .content {
-		    text-align: justify;
-		  }
-		  /* Ajuste "Sobre Mim" para mobile: foto e texto em coluna */
-		  #sobremim .content {
-		    flex-direction: column;
-		    align-items: center;
-		  }
-		  #sobremim .content .foto,
-		  #sobremim .content .texto {
-		    flex: 1 1 100%;
-		    text-align: center;
-		  }
-		  
-		  /* Nova regra para centralizar imagens nas seções "introducao" e "sinais" */
-		  #introducao .content img.placeholder-image,
-		  #sinais .content img.placeholder-image {
-		    display: block;
-		    margin-left: auto;
-		    margin-right: auto;
-		  }
-		}
-		
-		@media (max-width: 480px) {
-		  header.banner {
-		    height: 40vh;
-		  }
-		  header.banner h1 {
-		    font-size: 2rem;
-		  }
-		  header.banner p {
-		    font-size: 1rem;
-		  }
-		  .onboarding-content {
-		    padding: 20px;
-		    margin: 0 10px;
-		  }
-		  /* Ajusta os botões fixos para telas muito pequenas */
-		  .share-container,
-		  #back-to-top {
-		    bottom: 80px;
-		    width: 45px;
-		    height: 45px;
-		  }
-		}
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Variáveis de cores, inspiradas no banner (tons de azul e amarelo para contraste) */
+:root {
+  --cor-primaria: #0056b3; /* Azul principal: confiança e serenidade */
+  --cor-secundaria: #007acc; /* Azul complementar para botões e destaques */
+  --cor-fundo: #f9f9f9;
+  --cor-texto: #333;
+  --cor-acento: #FFC107; /* Amarelo para destacar elementos no mobile */
+  --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transicao-base: 0.3s;
+}
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  position: relative;
+}
+a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Splash Screen (Onboarding) */
+.onboarding-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-primaria);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 10px;
+}
+.onboarding-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+.onboarding-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--cor-primaria);
+}
+.onboarding-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--cor-texto);
+}
+.btn-onboard {
+  padding: 10px 25px;
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transicao-base);
+}
+.btn-onboard:hover {
+  background-color: #006fda;
+}
+@keyframes sway {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.sway {
+  animation: sway 0.5s ease-out forwards;
+}
+
+/* Sidebar: Menu Lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform var(--transicao-base);
+  z-index: 1500;
+}
+.sidebar.active {
+  transform: translateX(250px);
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+.sidebar nav ul li a {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.sidebar .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/* Botão Hamburger com texto "Menu" */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1600;
+}
+.hamburger svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--cor-acento);
+}
+.hamburger span {
+  font-size: 1rem;
+  color: var(--cor-acento);
+  font-weight: bold;
+}
+
+/* Cabeçalho e Banner */
+header.banner {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://i.pinimg.com/736x/67/47/3e/67473e58dbc79799296304dec97fafe9.jpg')
+      no-repeat center 20%;
+  background-size: cover;
+  text-align: center;
+}
+header.banner h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+}
+header.banner p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Navegação Superior (links âncora) */
+nav.top-nav {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+nav.top-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+nav.top-nav ul li {
+  margin: 0 15px;
+}
+nav.top-nav ul li a {
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+/* Main: Conteúdo Principal */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+section {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transicao-base);
+}
+section:hover {
+  transform: scale(1.01);
+}
+section h2 {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+section h2 svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+section .content {
+  padding: 20px;
+}
+section .content p {
+  margin-bottom: 1em;
+}
+
+/* Seção: Introdução -> Imagem à esquerda e texto à direita */
+#introducao .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+#introducao .content img.placeholder-image {
+  flex: 0 0 40%;
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+#introducao .content > p {
+  flex: 1 1 55%;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* Seção: Origens */
+#origens .content {
+  text-align: justify;
+  padding: 0 10px;
+}
+
+/* Seção: Sinais -> Texto à esquerda, imagem à direita */
+#sinais .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+#sinais .content .text-block {
+  flex: 1 1 55%;
+  text-align: justify;
+}
+#sinais .content .text-block p {
+  margin-bottom: 1em;
+}
+#sinais .content ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  line-height: 1.8;
+}
+#sinais .content ul li {
+  margin-bottom: 8px;
+}
+#sinais .content img.placeholder-image {
+  flex: 0 0 40%;
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Seção de Dicas: texto detalhado para aplicação prática */
+#dicas .content p {
+  margin-bottom: 1.2em;
+}
+#dicas .content ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  line-height: 1.8;
+}
+#dicas .content ul li {
+  margin-bottom: 8px;
+}
+#dicas .content ul li strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Seção: Sobre Mim */
+#sobremim .content {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  text-align: justify;
+}
+#sobremim .content .foto {
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+}
+#sobremim .content .foto img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+#sobremim .content .texto {
+  flex: 1 1 auto;
+}
+
+/* Seção: Interação */
+#contato .content {
+  text-align: justify;
+}
+#contato form#formContato {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#contato form#formContato button {
+  align-self: center;
+}
+
+/* Botões de CTA Elegantes */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color var(--transicao-base), transform var(--transicao-base);
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn:hover {
+  background-color: #006fda;
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-rastreio {
+  background-color: var(--cor-primaria);
+}
+
+/* Sidebar de Compartilhamento e Botão "Voltar ao Topo" */
+.share-container,
+#back-to-top {
+  position: fixed;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.share-container {
+  bottom: 20px;
+  left: 20px;
+}
+#back-to-top {
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--cor-primaria);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: none;
+  transition: background-color var(--transicao-base);
+}
+#back-to-top:hover {
+  background-color: #004494;
+}
+.share-container a {
+  width: 50px;
+  height: 50px;
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transicao-base);
+}
+.share-container a:hover {
+  background-color: #006fda;
+}
+.share-container a svg,
+#back-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+/* Rodapé: Centralizado e Simétrico */
+footer {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+}
+footer p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+/* Responsividade: Mobile-First */
+@media (max-width: 768px) {
+  .hamburger span {
+    font-size: 0.9rem;
+  }
+  nav.top-nav ul li {
+    margin: 0 8px;
+  }
+  nav.top-nav ul li a {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+  /* Centraliza as imagens e garante que os textos fiquem justificados */
+  #introducao .content,
+  #origens .content,
+  #sinais .content,
+  #dicas .content,
+  #sobremim .content,
+  #contato .content {
+    text-align: justify;
+  }
+  /* Ajuste "Sobre Mim" para mobile: foto e texto em coluna */
+  #sobremim .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  #sobremim .content .foto,
+  #sobremim .content .texto {
+    flex: 1 1 100%;
+    text-align: justify;
+  }
+  
+  /* Nova regra para centralizar imagens nas seções "introducao" e "sinais" */
+  #introducao .content img.placeholder-image,
+  #sinais .content img.placeholder-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header.banner {
+    height: 40vh;
+  }
+  header.banner h1 {
+    font-size: 2rem;
+  }
+  header.banner p {
+    font-size: 1rem;
+  }
+  .onboarding-content {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  /* Ajusta os botões fixos para telas muito pequenas */
+  .share-container,
+  #back-to-top {
+    bottom: 80px;
+    width: 45px;
+    height: 45px;
+  }
+}
 		
 	</style>
 </head>
